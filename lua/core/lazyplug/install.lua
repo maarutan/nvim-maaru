@@ -112,4 +112,6 @@ return {
 	{ "maarutan/pacman-anims-nvim" },
 	--nocut
 	{ "maarutan/nvim-nocut" },
+	--keycalm
+	{ "maarutan/keycalm.nvim" },
 }

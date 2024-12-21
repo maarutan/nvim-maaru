@@ -22,7 +22,7 @@ require("plugins.colorizer")
 require("plugins.todo")
 require("plugins.gitsing")
 require("plugins.cinnamon")
-require("plugins.cowboy") -- cowboy
+require("plugins.keycalm") -- KEYCALM:
 require("plugins.indentLine")
 require("plugins.yazinvim")
 require("plugins.treesitter-context")
@@ -42,6 +42,7 @@ require("plugins.buffer-del")
 require("plugins.buffer-line")
 require("plugins.buffer-clouse")
 require("plugins.pacman_anims")
+require("plugins.nocut")
 -- sql
 require("plugins.dadbod")
 --ai-helper
