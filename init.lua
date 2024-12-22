@@ -6,6 +6,7 @@ require("core.colorscheme")
 require("core.gui") -- ui use neovide
 
 -- plugins configure
+
 require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.neotree")
@@ -35,14 +36,17 @@ require("plugins.illuminate")
 require("plugins.matchup")
 require("plugins.renamer")
 require("plugins.showfile")
+require("plugins.navic")
+require("plugins.nocut")
+-- require("plugins.minianim")
+require("plugins.pacman_anims")
+-- require("plugins.spasec")
 --buffer
 require("plugins.buffer-name")
 require("plugins.buffer-new")
 require("plugins.buffer-del")
 require("plugins.buffer-line")
 require("plugins.buffer-clouse")
-require("plugins.pacman_anims")
-require("plugins.nocut")
 -- sql
 require("plugins.dadbod")
 --ai-helper

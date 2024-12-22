@@ -1,13 +1,8 @@
 -- leader key
 vim.g.mapleader = " "
 
--- normal mode saves
-vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-Return>", ":w<CR>", { noremap = true, silent = true })
-
--- insert mode saves
-vim.keymap.set("i", "<C-s>", "<cmd>:w<CR>", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-Return>", "<cmd>:w<CR>", { noremap = true, silent = true })
+-- Delete a word backwards
+vim.keymap.set("n", "dw", 'vb"_d')
 
 -- esc
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
@@ -130,4 +125,4 @@ vim.cmd([[
 
 vim.keymap.set("n", "<leader>oc", function()
 	vim.cmd("edit ~/.config/nvim/init.lua")
-end, { noremap = true, silent = true, desc = "Открыть init.lua" })
+end, { noremap = true, silent = true, desc = "open init.lua" })

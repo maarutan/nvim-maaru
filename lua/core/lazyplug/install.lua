@@ -114,4 +114,8 @@ return {
 	{ "maarutan/nvim-nocut" },
 	--keycalm
 	{ "maarutan/keycalm.nvim" },
+	-- mini animate
+	{ "echasnovski/mini.animate", version = "*" },
+	--cursor anims
+	{ "edluffy/specs.nvim" },
 }
