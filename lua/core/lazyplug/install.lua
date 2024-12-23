@@ -8,6 +8,7 @@ return {
 	{ "Mofiqul/vscode.nvim" },
 	{ "sainnhe/everforest" },
 	{ "binhtran432k/dracula.nvim" },
+	{ "xiyaowong/transparent.nvim" },
 	-- treesitter
 	{ "nvim-treesitter/nvim-treesitter" },
 	-- telescope
@@ -46,8 +47,6 @@ return {
 	{ "mikavilpas/yazi.nvim" },
 	--TODO:
 	{ "folke/todo-comments.nvim" },
-	-- autopairs
-	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 	-- gitsigns
 	{ "lewis6991/gitsigns.nvim" },
 	-- cinnamon for cursor
@@ -94,10 +93,6 @@ return {
 	{ "tpope/vim-dadbod" },
 	{ "kristijanhusak/vim-dadbod-ui" },
 	{ "kristijanhusak/vim-dadbod-completion" },
-	-- surround
-	{ "tpope/vim-surround" },
-	-- delete no cut
-	{ "svermeulen/vim-cutlass" },
 	-- matchup
 	{ "andymass/vim-matchup" },
 	-- illuminate
@@ -116,6 +111,15 @@ return {
 	{ "maarutan/keycalm.nvim" },
 	-- mini animate
 	{ "echasnovski/mini.animate", version = "*" },
+	{ "echasnovski/mini.icons", version = "*" },
 	--cursor anims
 	{ "edluffy/specs.nvim" },
+	--whichkey
+	{ "folke/which-key.nvim", event = "VeryLazy" },
+	--better esc
+	{ "max397574/better-escape.nvim" },
+	--autopairs
+	{ "jiangmiao/auto-pairs" },
+	--nvim-surround
+	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
 }

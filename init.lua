@@ -6,7 +6,6 @@ require("core.colorscheme")
 require("core.gui") -- ui use neovide
 
 -- plugins configure
-
 require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.neotree")
@@ -38,8 +37,11 @@ require("plugins.renamer")
 require("plugins.showfile")
 require("plugins.navic")
 require("plugins.nocut")
--- require("plugins.minianim")
+require("plugins.whichkey")
+require("plugins.mini")
 require("plugins.pacman_anims")
+require("plugins.betteresc")
+require("plugins.surround")
 -- require("plugins.spasec")
 --buffer
 require("plugins.buffer-name")
@@ -55,6 +57,7 @@ require("plugins.codeium")
 -- snippets
 require("snippets.snippets")
 require("snippets.pyright")
+require("snippets.lorem").setup()
 
 -- devlanguag
 require("devlangs.config")
