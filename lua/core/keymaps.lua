@@ -66,16 +66,16 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", {
 }) -- Фокус на правое окно
 
 --
-vim.api.nvim_set_keymap("n", "<A-S-v>", ":vsplit<CR>", {
+vim.api.nvim_set_keymap("n", "<leader>wv", ":vsplit<CR>", {
 	noremap = true,
 	silent = true,
-	desc = "  Vertical Split",
+	desc = "  Vertical Split",
 })
 
-vim.api.nvim_set_keymap("n", "<A-S-s>", ":split<CR>", {
+vim.api.nvim_set_keymap("n", "<leader>ws", ":split<CR>", {
 	noremap = true,
 	silent = true,
-	desc = "   horizontal Split",
+	desc = "  horizontal Split",
 })
 vim.api.nvim_set_keymap("n", "<A-s-h>", ":vertical resize -5<cr>", {
 	noremap = true,
@@ -341,5 +341,3 @@ pcall(vim.keymap.del, "c", "<CR>")
 vim.keymap.set("n", "<CR>", "o<Esc>", { noremap = true, silent = true }) -- Normal mode
 vim.keymap.set("i", "<CR>", "<CR>", { noremap = true, silent = true }) -- Insert mode
 vim.keymap.set("c", "<CR>", "<CR>", { noremap = true, silent = true }) -- Command mode
-
-vim.keymap.set("n", "<C-Return>", "w<CR>", { noremap = true, silent = true }) -- Command mode
