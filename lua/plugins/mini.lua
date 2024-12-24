@@ -1,8 +1,8 @@
--- require("mini.animate").setup({
--- 	scroll = {
--- 		enable = false, -- Отключить анимацию прокрутки
--- 	},
--- })
+require("mini.animate").setup({
+	scroll = {
+		enable = false, -- Отключить анимацию прокрутки
+	},
+})
 
 -- No need to copy this inside `setup()`. Will be used automatically.
 require("mini.icons").setup({

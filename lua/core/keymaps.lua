@@ -183,7 +183,7 @@ vim.api.nvim_set_keymap("n", "<leader>bbd", ":q<CR>", {
 	silent = true,
 	desc = " 󰩈  Delete buffer",
 })
-vim.api.nvim_set_keymap("n", "<A-q>", ":q!<CR>", {
+vim.api.nvim_set_keymap("n", "<A-q>", ":close<CR>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰩈  Delete buffer",
