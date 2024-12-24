@@ -152,7 +152,7 @@ require("dashboard").setup({
 			},
 
 			{
-				icon = "󰄛 ",
+				icon = " ",
 				icon_hl = "Title",
 				desc = "Recent files",
 				desc_hl = "String",

@@ -189,6 +189,12 @@ vim.api.nvim_set_keymap("n", "<A-q>", ":close<CR>", {
 	desc = " 󰩈  Delete buffer",
 })
 
+vim.api.nvim_set_keymap("n", "<A-S-q>", "<cmd>quitall!<CR>", {
+	noremap = true,
+	silent = true,
+	desc = " 󰩈  quit",
+})
+
 -- Key mappings customization with proper descriptions and icons from Nerd Font
 
 -- Nerd Font icon usage for better visibility and aesthetic coding experience
