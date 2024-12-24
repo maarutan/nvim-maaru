@@ -113,7 +113,6 @@ return {
 	{ "echasnovski/mini.animate", version = "*" },
 	{ "echasnovski/mini.icons", version = "*" },
 	--cursor anims
-	{ "edluffy/specs.nvim" },
 	--whichkey
 	{ "folke/which-key.nvim", event = "VeryLazy" },
 	--better esc
@@ -122,6 +121,14 @@ return {
 	{ "jiangmiao/auto-pairs" },
 	--nvim-surround
 	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
-  --lorem for nvim
-  {"maarutan/lorem.nvim"},
+	--lorem for nvim
+	{ "maarutan/lorem.nvim" },
+	--lifeshare
+	{ "azratul/live-share.nvim", dependencies = "jbyuki/instant.nvim" },
+	--smoothcursor
+	{ "sphamba/smear-cursor.nvim" },
+	--macro notify
+	{ "maarutan/macro-notify.nvim" },
+	--img view
+	{ "samodostal/image.nvim" },
 }
