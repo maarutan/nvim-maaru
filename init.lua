@@ -42,6 +42,7 @@ require("plugins.mini")
 require("plugins.pacman_anims")
 require("plugins.betteresc")
 require("plugins.surround")
+require("plugins.lorem")
 -- require("plugins.spasec")
 --buffer
 require("plugins.buffer-name")
@@ -57,7 +58,6 @@ require("plugins.codeium")
 -- snippets
 require("snippets.snippets")
 require("snippets.pyright")
-require("snippets.lorem").setup()
 
 -- devlanguag
 require("devlangs.config")

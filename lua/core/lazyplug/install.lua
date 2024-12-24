@@ -122,4 +122,6 @@ return {
 	{ "jiangmiao/auto-pairs" },
 	--nvim-surround
 	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
+  --lorem for nvim
+  {"maarutan/lorem.nvim"},
 }
