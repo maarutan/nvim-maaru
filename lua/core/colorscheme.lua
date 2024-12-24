@@ -24,6 +24,8 @@ require("core.lazyplug.colorscheme.catppuccin")
 --
 --transparent
 -- require("core.lazyplug.colorscheme.transparent")
+
+-- vim.o.background = "light"
 ---------------------------------------------------------------
 --cursor theme
 if vim.o.background == "light" then
