@@ -17,14 +17,13 @@ wk.add({
 	{ "<leader>t", desc = "Tabs" },
 	{ "<leader>u", desc = "Undo" },
 	{ "<leader>b", desc = "Buffer" },
-	{ "<leader>o", desc = "Option" },
 	{ "<leader>w", desc = "Hop" },
 	{ "<leader>s", desc = "Select" },
 	{ "<leader>sf", desc = "File" },
 	{ "<leader>T", desc = "New Buffer and Terminal" },
 
 	{ "<leader>r", group = "R - zone" },
-	{ "<leader>rr", desc = "Rename" },
+	{ "<leader>rn", desc = "Rename" },
 
 	{ "<leader>l", group = "LSP" },
 	{ "<leader>lD", desc = "Declaration" },
@@ -33,4 +32,7 @@ wk.add({
 
 	{ "<leader>c", group = "Color Schemes" },
 	{ "<leader>cs", desc = "Open" },
+
+	{ "<leader>o", group = "Option" },
+	{ "<leader>or", desc = "Relaod config" },
 }, { prefix = "<leader>" })
