@@ -11,7 +11,7 @@ null_ls.setup({
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				buffer = bufnr,
 				callback = function()
-					vim.lsp.buf.format({ async = false })
+					vim.lsp.buf.format({ async = true })
 				end,
 			})
 		end

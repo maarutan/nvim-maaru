@@ -38,7 +38,7 @@ vim.keymap.set("n", "<leader>cs", builtin.colorscheme, {
 	desc = " Select colorscheme",
 })
 vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<CR>", { desc = "󰣜 Open undo tree" })
-vim.keymap.set("n", "<leader>fn", "<cmd>Telescope notify<CR>", { desc = "󰍡 Notification history" })
+-- vim.keymap.set("n", "<leader>fn", "<cmd>Telescope notify<CR>", { desc = "󰍡 Notification history" })
 
 local function open_file_browser()
 	telescope.extensions.file_browser.file_browser({
@@ -103,6 +103,6 @@ telescope.setup({
 })
 
 -- Load Telescope extensions
-telescope.load_extension("notify")
+-- telescope.load_extension("notify")
 telescope.load_extension("file_browser")
 telescope.load_extension("undo")

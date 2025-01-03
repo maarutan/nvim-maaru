@@ -75,6 +75,7 @@ cmp.setup({
 				path = "[Path]",
 				codeium = "[Codeium]", -- Добавляем метку для Codeium
 				luasnip = "[Snippet]",
+				format = require("nvim-highlight-colors").format,
 			})[entry.source.name]
 			return vim_item
 		end,

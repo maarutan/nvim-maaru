@@ -338,15 +338,15 @@ vim.cmd([[
     cnoremap <C-k> <C-p>
 ]])
 
--- save
-vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", {
-	noremap = true,
-	silent = true,
-	desc = "save",
-})
-
-vim.keymap.set("i", "<C-s>", "<cmd>w<CR>", {
-	noremap = true,
-	silent = true,
-	desc = "save",
-})
+-- -- save
+-- vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", {
+-- 	noremap = true,
+-- 	silent = true,
+-- 	desc = "save",
+-- })
+--
+-- vim.keymap.set("i", "<C-s>", "<cmd>w<CR>", {
+-- 	noremap = true,
+-- 	silent = true,
+-- 	desc = "save",
+-- })

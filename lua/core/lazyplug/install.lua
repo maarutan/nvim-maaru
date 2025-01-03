@@ -23,8 +23,8 @@ return {
 	-- neo tree
 	{ "nvim-neo-tree/neo-tree.nvim", branch = "v2.x" },
 	{ "MunifTanjim/nui.nvim" },
-	-- colorizer
-	{ "norcalli/nvim-colorizer.lua" },
+	-- highlight colors
+	{ "brenoprata10/nvim-highlight-colors" },
 	-- multi cursor
 	{ "maarutan/nvim-visual-multi", branch = "main" },
 	-- Bufferline
@@ -130,5 +130,5 @@ return {
 	--macro notify
 	{ "maarutan/macro-notify.nvim" },
 	--img view
-	{ "samodostal/image.nvim" },
+	{ "edluffy/hologram.nvim" },
 }

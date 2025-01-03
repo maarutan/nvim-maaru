@@ -95,6 +95,8 @@ require("neo-tree").setup({
 			},
 			["<2-LeftMouse>"] = "open",
 			["l"] = "open",
+			["L"] = "set_root",
+			["H"] = "navigate_up",
 			["<esc>"] = "revert_preview",
 			["P"] = { "toggle_preview", config = { use_float = true } },
 			-- ["l"] = "focus_preview",
@@ -142,7 +144,7 @@ require("neo-tree").setup({
 	},
 	nesting_rules = {},
 	source_selector = {
-		winbar = true, -- или 'tab' для отображения вверху окна
+		winbar = false, -- или 'tab' для отображения вверху окна
 		content_layout = "center",
 		tabs_layout = "equal",
 		show_separator = true,
@@ -152,9 +154,11 @@ require("neo-tree").setup({
 			{ source = "buffers", display_name = "󱚀  Buffers" },
 		},
 	},
+	hide_root_node = true,
+	retain_hidden_root_indent = true,
 	filesystem = {
 		filtered_items = {
-			show_path = "none", -- Это уберет отображение пути
+			show_path = false, -- Это уберет отображение пути
 			visible = false, -- when true, they will just be displayed differently than normal items
 			hide_dotfiles = true,
 			hide_gitignored = true,
@@ -163,6 +167,10 @@ require("neo-tree").setup({
 				--"node_modules"
 				".venv",
 				".venv",
+				"venv",
+				"pyrightconfig.json",
+				".pyrightconfig.json",
+				"node_modules",
 			},
 			hide_by_pattern = { -- uses glob style patterns
 				--"*.meta",
@@ -241,58 +249,3 @@ require("neo-tree").setup({
 		},
 	},
 })
--- Пример настройки вкладок с Neo-tree
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "neo-tree",
-	callback = function()
-		vim.opt_local.buflisted = false -- Убираем буфер из списка
-	end,
-})
-function CloseBufferWithoutFocusingNeoTree()
-	local bufs = vim.api.nvim_list_bufs()
-	local other_buf = nil
-
-	-- Найти другой буфер, кроме neo-tree
-	for _, buf in ipairs(bufs) do
-		if vim.fn.buflisted(buf) == 1 and vim.api.nvim_buf_get_option(buf, "filetype") ~= "neo-tree" then
-			other_buf = buf
-			break
-		end
-	end
-
-	-- Если найден другой буфер, переключиться на него
-	if other_buf then
-		vim.cmd("buffer " .. other_buf)
-	else
-		-- Если нет других буферов, создать новый пустой
-		vim.cmd("enew")
-	end
-
-	-- Закрыть текущий буфер
-	vim.cmd("bd")
-end
-
-function CloseBufferWithoutFocusingNeoTree()
-	local bufs = vim.api.nvim_list_bufs()
-	local other_buf = nil
-
-	-- Найти другой буфер, кроме neo-tree
-	for _, buf in ipairs(bufs) do
-		if vim.fn.buflisted(buf) == 1 and vim.api.nvim_buf_get_option(buf, "filetype") ~= "neo-tree" then
-			other_buf = buf
-			break
-		end
-	end
-
-	-- Если найден другой буфер, переключиться на него
-	if other_buf then
-		vim.cmd("buffer " .. other_buf)
-	else
-		-- Если нет других буферов, создать новый пустой
-		vim.cmd("enew")
-	end
-
-	-- Закрыть текущий буфер
-	vim.cmd("bd")
-end
