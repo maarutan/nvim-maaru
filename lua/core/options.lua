@@ -19,6 +19,8 @@ vim.opt.cursorline = true -- Подсвечивать строку с курсо
 -- Настройки номеров строк
 vim.opt.number = true -- Показывать номера строк
 vim.opt.relativenumber = true -- Относительные номера строк
+vim.api.nvim_buf_set_option(0, "modifiable", true)
+vim.bo.modifiable = true
 
 -- Использование пробелов вместо табуляции
 vim.opt.expandtab = true -- Преобразовывать табуляцию в пробелы

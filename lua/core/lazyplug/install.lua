@@ -74,10 +74,8 @@ return {
 	{ "glepnir/dashboard-nvim" },
 	-- mason
 	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "jay-babu/mason-null-ls.nvim" },
-	-- null-ls
-	{ "jose-elias-alvarez/null-ls.nvim" },
+	--formatter
+	{ "mhartington/formatter.nvim" },
 	-- snippets
 	{ "L3MON4D3/LuaSnip" },
 	{ "rafamadriz/friendly-snippets" },
@@ -129,6 +127,11 @@ return {
 	{ "sphamba/smear-cursor.nvim" },
 	--macro notify
 	{ "maarutan/macro-notify.nvim" },
-	--img view
-	{ "edluffy/hologram.nvim" },
+	--kitty clipboard mode
+	{ "mikesmithgh/kitty-scrollback.nvim" },
+	--nvim linting
+	{ "mfussenegger/nvim-lint" },
+	--quickfix ui for nvim
+	-- { "kevinhwang91/nvim-bqf" }
+	{ "folke/trouble.nvim" },
 }

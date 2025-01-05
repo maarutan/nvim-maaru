@@ -338,6 +338,12 @@ vim.cmd([[
     cnoremap <C-k> <C-p>
 ]])
 
+vim.keymap.set("n", "m", "q", {
+	noremap = true,
+	silent = true,
+	desc = "Start/stop macro recording",
+})
+
 -- -- save
 -- vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", {
 -- 	noremap = true,
