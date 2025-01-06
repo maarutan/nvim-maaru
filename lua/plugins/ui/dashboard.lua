@@ -44,12 +44,12 @@ local function default_header()
 		"",
 		"",
 		"",
-		"            ███╗   ███╗ ██████╗  ██████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗               Z",
-		"            ████╗ ████║██╔═══██╗██╔═══██╗████╗  ██║██║   ██║██║████╗ ████║           Z    ",
-		"            ██╔████╔██║██║   ██║██║   ██║██╔██╗ ██║██║   ██║██║██╔████╔██║      z         ",
-		"            ██║╚██╔╝██║██║   ██║██║   ██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║   z            ",
-		"            ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║                ",
-		"            ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝                ",
+		"               ███╗   ███╗ ██████╗  ██████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗               Z",
+		"               ████╗ ████║██╔═══██╗██╔═══██╗████╗  ██║██║   ██║██║████╗ ████║           Z    ",
+		"               ██╔████╔██║██║   ██║██║   ██║██╔██╗ ██║██║   ██║██║██╔████╔██║      z         ",
+		"               ██║╚██╔╝██║██║   ██║██║   ██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║   z            ",
+		"               ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║                ",
+		"               ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝                ",
 		"",
 		"",
 		"",
@@ -68,7 +68,7 @@ require("dashboard").setup({
 				desc = "Open Directory",
 				desc_hl = "String",
 				key = "d",
-				keymap = "              SPC w d",
+				keymap = "      SPC w d",
 				key_hl = "Number",
 				action = function()
 					require("telescope").extensions.file_browser.file_browser({
@@ -94,7 +94,7 @@ require("dashboard").setup({
 				desc = "Find and open file",
 				desc_hl = "String",
 				key = "f",
-				keymap = "SPC f f",
+				keymap = "         SPC f f",
 				key_hl = "Number",
 				action = function()
 					require("telescope.builtin").find_files({
@@ -134,7 +134,7 @@ require("dashboard").setup({
 				desc = "Git Branches",
 				desc_hl = "String",
 				key = "b",
-				keymap = "              SPC g b",
+				keymap = "         SPC g b",
 				key_hl = "Number",
 				action = function()
 					if vim.fn.isdirectory(".git") == 1 then
@@ -153,7 +153,7 @@ require("dashboard").setup({
 				desc = "Recent files",
 				desc_hl = "String",
 				key = "r",
-				keymap = "              SPC f r",
+				keymap = "         SPC f r",
 				key_hl = "Number",
 				action = function()
 					local action_state = require("telescope.actions.state")
@@ -194,7 +194,7 @@ require("dashboard").setup({
 				desc = "New file",
 				desc_hl = "String",
 				key = "n",
-				keymap = "            SPC b n",
+				keymap = "         SPC b n",
 				key_hl = "Number",
 				action = M.create_new_buffer,
 			},
@@ -205,16 +205,16 @@ require("dashboard").setup({
 				desc = "Open Neovim Config",
 				desc_hl = "String",
 				key = "o",
-				keymap = "              SPC o c",
+				keymap = "         SPC o c",
 				key_hl = "Number",
 				action = ":cd ~/.config/nvim | edit init.lua",
 			},
 			-- Quit Button [q]
 			{
-				desc = "                    󰩈 Quit [q]", -- Centered text
+				desc = "                      󰩈 Quit [q]", -- Centered text
 				desc_hl = "String",
 				key = "q",
-				keymap = "            SPC q _",
+				keymap = "         SPC q _",
 				key_hl = "Number",
 				action = ":qa", -- Quit Neovim command
 			},
