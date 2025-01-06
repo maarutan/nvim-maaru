@@ -16,5 +16,8 @@ require("plugins.dev.linting.lintings")
 -- mason:
 require("plugins.dev.mason")
 
+-- emmet:
+require("plugins.dev.emmets.emmets")
+
 -- mapping
 require("plugins.dev.devmap")

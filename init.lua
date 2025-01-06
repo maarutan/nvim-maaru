@@ -33,6 +33,8 @@ require("plugins.tools.telescope")
 require("plugins.tools.terminal")
 require("plugins.tools.treesitter")
 require("plugins.tools.yazinvim")
+require("plugins.tools.autotag")
+require("plugins.tools.autopairs")
 
 -- ui
 require("plugins.ui.cinnamon")
@@ -58,6 +60,7 @@ require("plugins.ui.whichkey")
 require("plugins.ui.bufferline")
 require("plugins.ui.DayOrNight")
 require("plugins.ui.lspsaga")
+require("plugins.ui.lspkind")
 -- require("plugins.ui.cursor-anims")
 
 -- snippets

@@ -1,12 +1,5 @@
 -- leader key
 vim.g.mapleader = " "
--- Delete a word backwards
-vim.keymap.set("n", "dw", 'vb"_d', {
-	noremap = true,
-	silent = true,
-	desc = "   Delete word ",
-})
-
 vim.keymap.set("n", "<A-e>", "<cmd>:Neotree toggle<CR>", {
 	noremap = true,
 	silent = true,

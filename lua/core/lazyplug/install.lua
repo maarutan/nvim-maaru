@@ -109,16 +109,16 @@ return {
 	{ "maarutan/nvim-nocut" },
 	--keycalm
 	{ "maarutan/keycalm.nvim" },
-	-- mini animate
-	{ "echasnovski/mini.animate", version = "*" },
-	{ "echasnovski/mini.icons", version = "*" },
 	--cursor anims
+	{ "echasnovski/mini.animate", version = "*" },
+	-- mini animate
+	{ "echasnovski/mini.icons", version = "*" },
 	--whichkey
 	{ "folke/which-key.nvim", event = "VeryLazy" },
 	--better esc
 	{ "max397574/better-escape.nvim" },
 	--autopairs
-	{ "jiangmiao/auto-pairs" },
+	{ "windwp/nvim-autopairs" },
 	--nvim-surround
 	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
 	--lorem for nvim
@@ -138,4 +138,8 @@ return {
 	{ "folke/trouble.nvim" },
 	--lspsaga better ui for lsp
 	{ "nvimdev/lspsaga.nvim" },
+	--auto autotag
+	{ "windwp/nvim-ts-autotag" },
+	--cmp view lsp
+	{ "onsails/lspkind.nvim" },
 }

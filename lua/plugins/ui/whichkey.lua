@@ -29,7 +29,8 @@ wk.add({
 	{ "<leader>l", group = "LSP" },
 	{ "<leader>lD", desc = "Declaration" },
 	{ "<leader>ld", desc = "Definition" },
-	{ "<leader>lh", desc = "Hover" },
+	{ "<leader>lh", desc = "Hover Doc" },
+	{ "<leader>lk", desc = "Hover" },
 	{ "<leader>li", desc = "Info" },
 	{ "<leader>lr", desc = "Restart" },
 

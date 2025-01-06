@@ -6,7 +6,7 @@ local on_attach = function(client, bufnr)
 
 	keymap("n", "<leader>lD", vim.lsp.buf.declaration, opts)
 	keymap("n", "<leader>ld", vim.lsp.buf.definition, opts)
-	-- vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, opts)
+	vim.keymap.set("n", "<leader>lk", vim.lsp.buf.hover, opts)
 end
 
 require("lspconfig").pyright.setup({

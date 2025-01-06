@@ -1,5 +1,6 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local lspkind = require("lspkind")
 
 cmp.setup({
 	snippet = {
@@ -76,16 +77,17 @@ cmp.setup({
 	},
 
 	formatting = {
-		format = function(entry, vim_item)
-			-- Add source name to the menu
-			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
+		format = lspkind.cmp_format({
+			mode = "symbol_text", -- Show both symbol and text
+			maxwidth = 50, -- Max width of text in the menu
+			ellipsis_char = "...", -- Add ellipsis if text is too long
+			menu = {
 				buffer = "[Buffer]",
-				path = "[Path]",
+				nvim_lsp = "[LSP]",
 				luasnip = "[Snippet]",
-			})[entry.source.name]
-			return vim_item
-		end,
+				path = "[Path]",
+			},
+		}),
 	},
 
 	experimental = {

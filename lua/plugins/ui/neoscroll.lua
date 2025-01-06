@@ -1,21 +1,19 @@
 require("neoscroll").setup({
-	mappings = { -- Клавиши для анимации прокрутки
+	mappings = { -- Keys to be mapped to their corresponding default scrolling animation
 		"<C-u>",
 		"<C-d>",
 	},
-	hide_cursor = true, -- Скрывать курсор во время прокрутки
-	stop_eof = true, -- Остановка на <EOF> при прокрутке вниз
-	respect_scrolloff = true, -- Учитывать 'scrolloff' при прокрутке
-	cursor_scrolls_alone = true, -- Курсор продолжает двигаться, даже если окно не может прокручиваться дальше
-	duration_multiplier = 1.0, -- Глобальный множитель длительности
-	easing_function = function(x)
-		return x ^ 50 * (x * (10 * x - 15) + 50) -- Пользовательская функция кривой Безье
-	end, -- Обратите внимание на запятую здесь
-	pre_hook = nil, -- Функция, выполняемая перед началом анимации прокрутки
-	post_hook = nil, -- Функция, выполняемая после завершения анимации прокрутки
-	performance_mode = false, -- Отключить "Режим производительности" для всех буферов
-	ignored_events = { -- События, игнорируемые во время прокрутки
-		"WinScrolled",
-		"CursorMoved",
+	hide_cursor = true, -- Hide cursor while scrolling
+	stop_eof = true, -- Stop at <EOF> when scrolling downwards
+	respect_scrolloff = true, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+	cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+	duration_multiplier = 1.0, -- Global duration multiplier
+	easing = "linear", -- Default easing function
+	pre_hook = nil, -- Function to run before the scrolling animation starts
+	post_hook = nil, -- Function to run after the scrolling animation ends
+	performance_mode = false, -- Disable "Performance Mode" on all buffers.
+	ignored_events = { -- Events ignored while scrolling
+		-- "WinScrolled",
+		-- "CursorMoved",
 	},
 })
