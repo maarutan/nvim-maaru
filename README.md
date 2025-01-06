@@ -11,7 +11,7 @@
 #save bak version
 mv ~/.config/nvim ~/.config/nvim.bak
 #cloning my nvim
-git clone https://github.com/maarutan/nvim-maaru.git ~/.config/nvim
+git clone https://github.com/maarutan/moonvim.git ~/.config/nvim
 #remove .git
 rm -rf ~/.config/nvim/.git
 ```
