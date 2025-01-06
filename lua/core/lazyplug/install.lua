@@ -5,7 +5,7 @@ return {
 	{ "folke/tokyonight.nvim" },
 	{ "navarasu/onedark.nvim" },
 	{ "rebelot/kanagawa.nvim" },
-	{ "Mofiqul/vscode.nvim" },
+	{ "mofiqul/vscode.nvim" },
 	{ "sainnhe/everforest" },
 	{ "binhtran432k/dracula.nvim" },
 	{ "xiyaowong/transparent.nvim" },
@@ -22,35 +22,37 @@ return {
 	{ "nvim-tree/nvim-web-devicons" },
 	-- neo tree
 	{ "nvim-neo-tree/neo-tree.nvim", branch = "v2.x" },
-	{ "MunifTanjim/nui.nvim" },
+	{ "muniftanjim/nui.nvim" },
 	-- highlight colors
 	{ "brenoprata10/nvim-highlight-colors" },
 	-- multi cursor
 	{ "maarutan/nvim-visual-multi", branch = "main" },
-	-- Bufferline
+	-- bufferline
 	{ "akinsho/bufferline.nvim" },
 	-- smoothcursor
-	{ "gen740/SmoothCursor.nvim" },
+	{ "gen740/smoothcursor.nvim" },
 	-- hop move
 	{ "hadronized/hop.nvim" },
 	-- terminal
 	{ "akinsho/toggleterm.nvim" },
 	-- noice
-	{ "folke/noice.nvim", event = "VeryLazy" },
+	{ "folke/noice.nvim" },
 	-- notifysend
 	{ "rcarriga/nvim-notify" },
 	-- comments
 	{ "terrortylor/nvim-comment" },
 	-- code runner
-	{ "CRAG666/code_runner.nvim" },
+	{ "crag666/code_runner.nvim" },
 	-- yazi for nvim
 	{ "mikavilpas/yazi.nvim" },
-	--TODO:
+	--todo:
 	{ "folke/todo-comments.nvim" },
 	-- gitsigns
 	{ "lewis6991/gitsigns.nvim" },
 	-- cinnamon for cursor
 	{ "declancm/cinnamon.nvim" },
+	-- neoscroll
+	{ "karb94/neoscroll.nvim" },
 	-- blankline
 	{ "lukas-reineke/indent-blankline.nvim" },
 	{ "echasnovski/mini.indentscope" },

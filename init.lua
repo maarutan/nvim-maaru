@@ -36,6 +36,7 @@ require("plugins.tools.yazinvim")
 
 -- ui
 require("plugins.ui.cinnamon")
+require("plugins.ui.neoscroll")
 require("plugins.ui.colorizer")
 require("plugins.ui.noice")
 require("plugins.ui.dashboard")
