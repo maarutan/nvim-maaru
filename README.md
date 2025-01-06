@@ -1,5 +1,6 @@
 # nvim-maaru
 
+![](./.img/moon.png)
 ![](./.img/django.png)
 ![](./.img/react.png)
 ![](./.img/cmp.png)
