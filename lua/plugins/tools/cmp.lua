@@ -1,98 +1,94 @@
--- lua/config/cmp.lua
 local cmp = require("cmp")
-local luasnip = require("plugins.snippets.snippets") -- Подключаем нашу конфигурацию для LuaSnip
+local luasnip = require("luasnip")
 
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body) -- Использование LuaSnip для сниппетов
+			luasnip.lsp_expand(args.body) -- Use LuaSnip for snippets
 		end,
 	},
 
 	mapping = {
-		-- C-Space для переключения автодополнения
+		-- C-Space: Open or close autocomplete menu
 		["<C-Space>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.close() -- Закрыть подсказку
+				cmp.close() -- Close the autocomplete menu
 			else
-				cmp.complete() -- Включить подсказку
+				cmp.complete() -- Open the autocomplete menu
 			end
 		end, { "i", "c" }),
 
-		-- Tab для подтверждения выбора
+		-- C-e: Close autocomplete menu
+		["<C-e>"] = cmp.mapping.close(),
+
+		-- Tab / Shift-Tab: Navigate in the autocomplete menu or move through snippets
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.confirm({ select = true }) -- Подтверждение текущего выбора
+				cmp.confirm({ select = false }) -- Confirm the selected item manually
 			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump() -- Развернуть сниппет или перейти вперед
+				luasnip.expand_or_jump() -- Expand snippet or jump forward
 			else
-				fallback() -- Обычное поведение
+				fallback() -- Default behavior
 			end
 		end, { "i", "s" }),
 
-		-- Shift-Tab для возврата назад
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if luasnip.jumpable(-1) then
-				luasnip.jump(-1) -- Перейти назад в сниппете
+				luasnip.jump(-1) -- Jump backward in snippet
 			else
-				fallback() -- Обычное поведение
+				fallback() -- Default behavior
 			end
 		end, { "i", "s" }),
 
-		-- C-j / C-k для навигации
+		-- C-j / C-k: Navigate through autocomplete suggestions
 		["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 		["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 
-		-- C-l для подтверждения выбора
+		-- Confirm: Enter, C-l, or C-Return
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<C-l>"] = cmp.mapping.confirm({ select = true }),
-
-		-- C-Return для подтверждения выбора
 		["<C-Return>"] = cmp.mapping.confirm({ select = true }),
 
-		-- Enter для подтверждения выбора
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-		-- Прокрутка документации
+		-- Scroll through documentation
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
-
-		-- Закрытие автодополнения
-		["<C-e>"] = cmp.mapping.close(),
 	},
 
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" }, -- Источник для путей
+		{ name = "nvim_lsp" }, -- Source: LSP server
+		{ name = "luasnip" }, -- Source: Snippets
+		{ name = "buffer" }, -- Source: Current buffer text
+		{ name = "path" }, -- Source: File paths
 	}),
+
+	window = {
+		-- UI settings for the autocomplete menu
+		completion = {
+			border = "rounded", -- Rounded borders
+			winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+			col_offset = 4, -- Offset to prevent overlapping with the cursor
+		},
+		-- UI settings for the documentation popup
+		documentation = {
+			border = "rounded", -- Rounded borders
+			winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+		},
+	},
 
 	formatting = {
 		format = function(entry, vim_item)
+			-- Add source name to the menu
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
 				buffer = "[Buffer]",
 				path = "[Path]",
-				codeium = "[Codeium]", -- Добавляем метку для Codeium
 				luasnip = "[Snippet]",
-				format = require("nvim-highlight-colors").format,
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 
 	experimental = {
-		ghost_text = true, -- Включение текста-призрака
+		ghost_text = false, -- Disable ghost text under the cursor
 	},
 })
-
--- Автодополнение только для поиска в буфере (`/`, `?`), но не для команд (`:`)
-cmp.setup.cmdline({ "/", "?" }, {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = {
-		{ name = "buffer" }, -- Источник для буфера
-	},
-})
-
--- Исключение `:` из автодополнения
--- Просто не добавляем cmp.setup.cmdline для ':'

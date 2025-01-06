@@ -32,6 +32,7 @@
   "live-share.nvim": { "branch": "main", "commit": "bf5e8e087c368aae0325a09d1ea43f2a08f5e9aa" },
   "lorem.nvim": { "branch": "main", "commit": "036c372f405ad28fead24fed62bfbffd7fb32bf9" },
   "lspkind-nvim": { "branch": "master", "commit": "d79a1c3299ad0ef94e255d045bed9fa26025dab6" },
+  "lspsaga.nvim": { "branch": "main", "commit": "5fce15331ac6c3a3ec3ac91ab0e85ed82f5cbba0" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
   "macro-notify.nvim": { "branch": "main", "commit": "3c0b2fb432a903215ac6736131c80431dc0630da" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },

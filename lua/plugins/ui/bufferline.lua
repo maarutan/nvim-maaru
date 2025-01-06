@@ -6,12 +6,12 @@ require("bufferline").setup({
 		left_mouse_command = "buffer",
 		middle_mouse_command = nil,
 		indicator = {
-			icon = "▎", -- Тонкий индикатор активного буфера
+			icon = "▎",
 			style = "icon",
 		},
-		buffer_close_icon = "  ", -- Крестик для закрытия буфера
-		modified_icon = "[󰐕]", -- Индикатор несохранённых изменений
-		close_icon = "  ", -- Глобальная кнопка закрытия всех буферов
+		buffer_close_icon = "  ",
+		modified_icon = "[󰐕]",
+		close_icon = "  ",
 		left_trunc_marker = "«",
 		right_trunc_marker = "»",
 		diagnostics = "nvim_lsp",
@@ -35,9 +35,9 @@ require("bufferline").setup({
 		show_buffer_icons = true,
 		show_buffer_close_icons = true,
 		show_tab_indicators = true,
-		enforce_regular_tabs = false, -- автоматическая подстройка ширины
+		enforce_regular_tabs = false,
 		always_show_bufferline = true,
-		separator_style = "thin", -- минималистичный стиль
+		separator_style = "thin",
 		custom_areas = {
 			right = function()
 				local mode = vim.g.is_day_mode and "   󰖨  ▎" or "     ▎"
@@ -55,12 +55,3 @@ require("bufferline").setup({
 		},
 	},
 })
-
-vim.keymap.set("n", "<leader>ba", function()
-	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-		if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].buflisted then
-			vim.cmd("bdelete " .. buf)
-		end
-	end
-	vim.notify("Все буферы закрыты", vim.log.levels.WARN, { title = "Bufferline" })
-end, { desc = "Закрыть все буферы" })

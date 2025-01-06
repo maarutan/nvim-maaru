@@ -13,6 +13,7 @@ require("core.gui")
 -------------
 --------------------------------
 -- tools
+require("plugins.tools.nocut")
 require("plugins.tools.betteresc")
 require("plugins.tools.cmp")
 require("plugins.tools.codeium")
@@ -25,7 +26,6 @@ require("plugins.tools.lifeshare")
 require("plugins.tools.lorem")
 require("plugins.tools.multicursor")
 require("plugins.tools.neotree")
-require("plugins.tools.nocut")
 require("plugins.tools.renamer")
 require("plugins.tools.scope")
 require("plugins.tools.surround")
@@ -56,6 +56,7 @@ require("plugins.ui.treesitter-context")
 require("plugins.ui.whichkey")
 require("plugins.ui.bufferline")
 require("plugins.ui.DayOrNight")
+require("plugins.ui.lspsaga")
 -- require("plugins.ui.cursor-anims")
 
 -- snippets
@@ -71,7 +72,6 @@ require("plugins.extras.buffer-new")
 require("plugins.extras.whoami")
 require("plugins.extras.showfile")
 require("plugins.extras.floutBuffer")
-
 -- dev
 require("plugins.dev.config")
 --------------------------------

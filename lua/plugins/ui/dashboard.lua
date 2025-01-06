@@ -1,9 +1,9 @@
 local M = {}
--- Функция для создания нового буфера
+-- Function to create a new buffer
 function M.create_new_buffer()
 	local new_name = vim.fn.input("New file name: ", "")
 	if new_name == "" then
-		vim.notify("Создание буфера отменено.", vim.log.levels.WARN, {
+		vim.notify("creation canceled.", vim.log.levels.WARN, {
 			icon = "ℹ️",
 			title = "NewBuffer",
 		})
@@ -11,7 +11,7 @@ function M.create_new_buffer()
 	end
 
 	if vim.fn.filereadable(new_name) == 1 then
-		vim.notify("Ошибка: Файл уже существует.", vim.log.levels.ERROR, {
+		vim.notify("Error: File exists.", vim.log.levels.ERROR, {
 			icon = "🚨",
 			title = "NewBuffer",
 		})
@@ -24,15 +24,15 @@ function M.create_new_buffer()
 	end)
 
 	if not ok then
-		vim.notify("Ошибка при создании буфера: " .. err, vim.log.levels.ERROR, {
+		vim.notify("Error creating: " .. err, vim.log.levels.ERROR, {
 			icon = "🚨",
 			title = "NewBuffer",
 		})
 		return
 	end
 
-	vim.notify("Новый буфер успешно создан: " .. new_name, vim.log.levels.INFO, {
-		icon = "✅",
+	vim.notify("New buffer created: " .. new_name, vim.log.levels.WARN, {
+		icon = "😄",
 		title = "NewBuffer",
 	})
 end
@@ -63,7 +63,7 @@ require("dashboard").setup({
 		header = default_header(),
 		center = {
 			{
-				icon = "󰉖 ",
+				icon = "󰉖    ",
 				icon_hl = "Title",
 				desc = "Open Directory",
 				desc_hl = "String",
@@ -73,7 +73,7 @@ require("dashboard").setup({
 				action = function()
 					require("telescope").extensions.file_browser.file_browser({
 						prompt_title = "Select Directory",
-						cwd = "~", -- Начальная директория
+						cwd = "~", -- Initial directory
 						attach_mappings = function(_, map)
 							local actions = require("telescope.actions")
 							map("i", "<CR>", function(prompt_bufnr)
@@ -89,7 +89,7 @@ require("dashboard").setup({
 			},
 
 			{
-				icon = "󰈞 ",
+				icon = "󰈞    ",
 				icon_hl = "Title",
 				desc = "Find and open file",
 				desc_hl = "String",
@@ -112,18 +112,15 @@ require("dashboard").setup({
 								end
 
 								local filepath = selected_entry.path
+								local file_dir = vim.fn.fnamemodify(filepath, ":p:h") -- Get the file directory
+
 								actions.close(prompt_bufnr)
 
-								-- Открываем файл
-								vim.cmd("edit " .. vim.fn.fnameescape(filepath))
+								-- Change the current directory to the file's directory
+								vim.cmd("cd " .. file_dir)
 
-								-- Открываем file_browser в директории файла
-								local file_dir = vim.fn.fnamemodify(filepath, ":p:h")
-								require("telescope").extensions.file_browser.file_browser({
-									cwd = file_dir,
-									respect_gitignore = false,
-									hidden = true,
-								})
+								-- Open the file
+								vim.cmd("edit " .. vim.fn.fnameescape(filepath))
 							end)
 							return true
 						end,
@@ -132,7 +129,7 @@ require("dashboard").setup({
 			},
 
 			{
-				icon = " ",
+				icon = "    ",
 				icon_hl = "Title",
 				desc = "Git Branches",
 				desc_hl = "String",
@@ -143,7 +140,7 @@ require("dashboard").setup({
 					if vim.fn.isdirectory(".git") == 1 then
 						require("telescope.builtin").git_branches()
 					else
-						vim.notify("У вас нет репозитория", vim.log.levels.WARN, {
+						vim.notify("No Git repository found.", vim.log.levels.WARN, {
 							title = "Git",
 							icon = "󰊢",
 						})
@@ -152,17 +149,46 @@ require("dashboard").setup({
 			},
 
 			{
-				icon = " ",
+				icon = "    ",
 				icon_hl = "Title",
 				desc = "Recent files",
 				desc_hl = "String",
 				key = "r",
 				keymap = "              SPC f r",
 				key_hl = "Number",
-				action = ":Telescope oldfiles",
+				action = function()
+					require("telescope.builtin").find_files({
+						find_command = { "fd", "--type", "f" },
+						attach_mappings = function(_, map)
+							local actions = require("telescope.actions")
+							local action_state = require("telescope.actions.state")
+
+							map("i", "<CR>", function(prompt_bufnr)
+								local selected_entry = action_state.get_selected_entry()
+
+								if not selected_entry then
+									print("No file selected!")
+									return
+								end
+
+								local filepath = selected_entry.path
+								local file_dir = vim.fn.fnamemodify(filepath, ":p:h") -- Get the file directory
+
+								actions.close(prompt_bufnr)
+
+								-- Change the current directory to the file's directory
+								vim.cmd("cd " .. file_dir)
+
+								-- Open the file
+								vim.cmd("edit " .. vim.fn.fnameescape(filepath))
+							end)
+							return true
+						end,
+					})
+				end,
 			},
 			{
-				icon = " ",
+				icon = "    ",
 				icon_hl = "Title",
 				desc = "New file",
 				desc_hl = "String",
@@ -173,7 +199,7 @@ require("dashboard").setup({
 			},
 
 			{
-				icon = " ",
+				icon = "    ",
 				icon_hl = "Title",
 				desc = "Open Neovim Config",
 				desc_hl = "String",
@@ -182,17 +208,17 @@ require("dashboard").setup({
 				key_hl = "Number",
 				action = ":cd ~/.config/nvim | edit init.lua",
 			},
-			-- Кнопка Quit [q]
+			-- Quit Button [q]
 			{
-				desc = "                    󰩈 Quit [q]", -- Центрируем текст
+				desc = "                    󰩈 Quit [q]", -- Centered text
 				desc_hl = "String",
 				key = "q",
 				keymap = "            SPC q _",
 				key_hl = "Number",
-				action = ":qa", -- Команда выхода из Neovim
+				action = ":qa", -- Quit Neovim command
 			},
 		},
-		-- Запускаем анимацию
+		-- Footer animation
 		footer = function()
 			local pacman = require("pacman").get_pacman_text()
 			local space = " "

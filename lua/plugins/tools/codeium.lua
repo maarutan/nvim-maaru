@@ -11,6 +11,6 @@ vim.keymap.set("i", "<A-x>", function()
 	return vim.fn["codeium#Clear"]()
 end, { expr = true, silent = true })
 
-vim.g.codeium_enable = 1 -- Включение Codeium
-vim.g.codeium_completions_enabled = 1 -- Включение предложений
-vim.g.codeium_insert_mode_mappings = 1 -- Включение автоматических предложений в режиме вставки
+vim.g.codeium_enable = 1 -- codeium_enable
+vim.g.codeium_completions_enabled = 1 -- codeium_completions_enabled
+vim.g.codeium_insert_mode_mappings = 1 -- codeium_insert_mode_mappings
