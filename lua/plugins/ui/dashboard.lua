@@ -43,17 +43,6 @@ local function default_header()
 		"",
 		"",
 		"",
-		"",
-		"              ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗             Z",
-		"              ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║        Z     ",
-		"              ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║    z         ",
-		"              ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ z            ",
-		"              ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║              ",
-		"              ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝              ",
-		"",
-		"",
-		"",
-		"",
 	}
 end
 
@@ -147,7 +136,6 @@ require("dashboard").setup({
 					end
 				end,
 			},
-
 			{
 				icon = "    ",
 				icon_hl = "Title",
@@ -157,31 +145,33 @@ require("dashboard").setup({
 				keymap = "              SPC f r",
 				key_hl = "Number",
 				action = function()
-					require("telescope.builtin").find_files({
-						find_command = { "fd", "--type", "f" },
-						attach_mappings = function(_, map)
-							local actions = require("telescope.actions")
-							local action_state = require("telescope.actions.state")
+					local action_state = require("telescope.actions.state")
+					local telescope = require("telescope.builtin")
 
-							map("i", "<CR>", function(prompt_bufnr)
-								local selected_entry = action_state.get_selected_entry()
-
-								if not selected_entry then
-									print("No file selected!")
+					telescope.oldfiles({
+						attach_mappings = function(prompt_bufnr, map)
+							local function open_and_change_dir()
+								local selection = action_state.get_selected_entry()
+								if not selection then
+									print("[Telescope] No selection")
 									return
 								end
+								-- Извлекаем путь к выбранному файлу
+								local filepath = selection.path or selection.filename
+								if filepath then
+									-- Меняем рабочую директорию
+									local dir = vim.fn.fnamemodify(filepath, ":h")
+									vim.cmd("cd " .. dir)
+									-- Принудительно открываем файл
+									vim.cmd("e! " .. filepath)
+								end
+								-- Используем команду Bdelete для закрытия буфера
+								vim.cmd("Bdelete " .. prompt_bufnr)
+							end
 
-								local filepath = selected_entry.path
-								local file_dir = vim.fn.fnamemodify(filepath, ":p:h") -- Get the file directory
-
-								actions.close(prompt_bufnr)
-
-								-- Change the current directory to the file's directory
-								vim.cmd("cd " .. file_dir)
-
-								-- Open the file
-								vim.cmd("edit " .. vim.fn.fnameescape(filepath))
-							end)
+							-- Привязываем действие к Enter
+							map("i", "<CR>", open_and_change_dir)
+							map("n", "<CR>", open_and_change_dir)
 							return true
 						end,
 					})

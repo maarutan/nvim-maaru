@@ -120,7 +120,6 @@ telescope.load_extension("notify")
 telescope.load_extension("file_browser")
 telescope.load_extension("undo")
 
--- Функция для проверки диагностики файла
 function _G.check_diagnostics(bufnr)
 	local diagnostics = vim.diagnostic.get(bufnr)
 	if #diagnostics == 0 then
@@ -130,7 +129,6 @@ function _G.check_diagnostics(bufnr)
 	return true
 end
 
--- Функция для проверки диагностики всего проекта
 function _G.check_project_diagnostics()
 	local diagnostics = vim.diagnostic.get()
 	if #diagnostics == 0 then
@@ -140,7 +138,6 @@ function _G.check_project_diagnostics()
 	return true
 end
 
--- Горячая клавиша для диагностики текущего файла
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>df",
@@ -148,10 +145,37 @@ vim.api.nvim_set_keymap(
 	{ desc = "Diagnostics for current file", noremap = true, silent = true }
 )
 
--- Горячая клавиша для диагностики всего проекта
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>da",
 	"<cmd>lua if _G.check_project_diagnostics() then require('telescope.builtin').diagnostics() end<CR>",
 	{ desc = "Diagnostics for entire project", noremap = true, silent = true }
 )
+
+vim.keymap.set("n", "<leader>fr", function()
+	local action_state = require("telescope.actions.state")
+	local telescope = require("telescope.builtin")
+
+	telescope.oldfiles({
+		attach_mappings = function(prompt_bufnr, map)
+			local function open_and_change_dir()
+				local selection = action_state.get_selected_entry()
+				if not selection then
+					print("[Telescope] No selection")
+					return
+				end
+				local filepath = selection.path or selection.filename
+				if filepath then
+					local dir = vim.fn.fnamemodify(filepath, ":h")
+					vim.cmd("cd " .. dir)
+					vim.cmd("e! " .. filepath)
+				end
+				vim.cmd("Bdelete " .. prompt_bufnr)
+			end
+
+			map("i", "<CR>", open_and_change_dir)
+			map("n", "<CR>", open_and_change_dir)
+			return true
+		end,
+	})
+end, { noremap = true, silent = true, desc = "Open Recent Files and change directory" })
