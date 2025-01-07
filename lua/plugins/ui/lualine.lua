@@ -39,6 +39,7 @@ require("lualine").setup({
 					V = "󰈈 V-Line",
 					[""] = "󰈈 V-Block",
 					c = " Command",
+					t = " Terminal",
 					r = "󰑕 Replace",
 					R = "󰑕 Replace",
 				}
