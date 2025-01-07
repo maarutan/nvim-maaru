@@ -9,6 +9,8 @@ return {
 	{ "sainnhe/everforest" },
 	{ "binhtran432k/dracula.nvim" },
 	{ "xiyaowong/transparent.nvim" },
+	--nocut
+	{ "maarutan/nvim-nocut" },
 	-- treesitter
 	{ "nvim-treesitter/nvim-treesitter" },
 	-- telescope
@@ -105,8 +107,6 @@ return {
 	{ "gagbo/circadian.nvim" },
 	--pacman animshttps
 	{ "maarutan/pacman-anims-nvim" },
-	--nocut
-	{ "maarutan/nvim-nocut" },
 	--keycalm
 	{ "maarutan/keycalm.nvim" },
 	--cursor anims
