@@ -337,6 +337,22 @@ vim.keymap.set("n", "m", "q", {
 	desc = "Start/stop macro recording",
 })
 
+vim.keymap.set("n", "<Leader>ph", "H", {
+	noremap = true,
+	silent = true,
+	desc = "Postion Cursor  Top",
+})
+vim.keymap.set("n", "<Leader>pm", "M", {
+	noremap = true,
+	silent = true,
+	desc = "Postion Cursor Center",
+})
+vim.keymap.set("n", "<Leader>pl", "L", {
+	noremap = true,
+	silent = true,
+	desc = "Postion Cursor Bottom",
+})
+
 -- -- save
 -- vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", {
 -- 	noremap = true,
@@ -349,3 +365,4 @@ vim.keymap.set("n", "m", "q", {
 -- 	silent = true,
 -- 	desc = "save",
 -- })
+--

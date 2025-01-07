@@ -152,30 +152,36 @@ vim.api.nvim_set_keymap(
 	{ desc = "Diagnostics for entire project", noremap = true, silent = true }
 )
 
-vim.keymap.set("n", "<leader>fr", function()
-	local action_state = require("telescope.actions.state")
-	local telescope = require("telescope.builtin")
-
-	telescope.oldfiles({
-		attach_mappings = function(prompt_bufnr, map)
-			local function open_and_change_dir()
-				local selection = action_state.get_selected_entry()
-				if not selection then
-					print("[Telescope] No selection")
-					return
-				end
-				local filepath = selection.path or selection.filename
-				if filepath then
-					local dir = vim.fn.fnamemodify(filepath, ":h")
-					vim.cmd("cd " .. dir)
-					vim.cmd("e! " .. filepath)
-				end
-				vim.cmd("Bdelete " .. prompt_bufnr)
-			end
-
-			map("i", "<CR>", open_and_change_dir)
-			map("n", "<CR>", open_and_change_dir)
-			return true
-		end,
-	})
-end, { noremap = true, silent = true, desc = "Open Recent Files and change directory" })
+-- vim.keymap.set("n", "<leader>fr", function()
+-- 	local action_state = require("telescope.actions.state")
+-- 	local telescope = require("telescope.builtin")
+--
+-- 	telescope.oldfiles({
+-- 		attach_mappings = function(prompt_bufnr, map)
+-- 			local function open_and_change_dir()
+-- 				local selection = action_state.get_selected_entry()
+-- 				if not selection then
+-- 					print("[Telescope] No selection")
+-- 					return
+-- 				end
+-- 				local filepath = selection.path or selection.filename
+-- 				if filepath then
+-- 					local dir = vim.fn.fnamemodify(filepath, ":h")
+-- 					vim.cmd("cd " .. dir)
+-- 					vim.cmd("e! " .. filepath)
+-- 				end
+-- 				vim.cmd("Bdelete " .. prompt_bufnr)
+-- 			end
+--
+-- 			map("i", "<CR>", open_and_change_dir)
+-- 			map("n", "<CR>", open_and_change_dir)
+-- 			return true
+-- 		end,
+-- 	})
+-- end, { noremap = true, silent = true, desc = "Open Recent Files and change directory" })
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>fr",
+	"<cmd>Telescope oldfiles<CR>",
+	{ desc = "Open Recent Files", noremap = true, silent = true }
+)

@@ -26,6 +26,8 @@ wk.add({
 	{ "<leader>r", group = "R - zone" },
 	{ "<leader>rn", desc = "Rename" },
 
+	{ "<leader>p", desc = "Postion Cursor" },
+
 	{ "<leader>l", group = "LSP" },
 	{ "<leader>lD", desc = "Declaration" },
 	{ "<leader>ld", desc = "Definition" },
