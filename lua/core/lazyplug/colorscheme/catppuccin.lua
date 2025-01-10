@@ -38,14 +38,18 @@ require("catppuccin").setup({
 		gitsigns = true,
 		nvimtree = true,
 		treesitter = true,
-		notify = false,
+		notify = true,
 		mini = {
 			enabled = true,
 			indentscope_color = "",
 		},
-		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 })
 
--- setup must be called before loading
 vim.cmd.colorscheme("catppuccin")
+
+if vim.o.background == "light" then
+	vim.g.VM_theme = "catppuccin_latte"
+elseif vim.o.background == "dark" then
+	vim.g.VM_theme = "catppuccin_mocha"
+end

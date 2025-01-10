@@ -232,22 +232,6 @@ vim.keymap.set("n", "<C-a>", "ggVG", {
 	silent = true,
 	desc = " Select all in normal mode",
 })
-vim.keymap.set("n", "<C-q>", "GVgg", {
-	noremap = true,
-	silent = true,
-	desc = "󰎓 Inverse select all in normal mode",
-})
-vim.keymap.set("i", "<C-q>", "<Esc>GVggi", {
-	noremap = true,
-	silent = true,
-	desc = "󰎓 Inverse select all in insert mode",
-})
-vim.keymap.set("i", "<C-a>", "<Esc>ggVGi", {
-	noremap = true,
-	silent = true,
-	desc = " Select all in insert mode",
-})
-
 -- Delete backward word
 vim.keymap.set("i", "<C-BS>", "<Esc>vbdi", {
 	noremap = true,
@@ -331,7 +315,7 @@ vim.cmd([[
     cnoremap <C-k> <C-p>
 ]])
 
-vim.keymap.set("n", "m", "q", {
+vim.keymap.set("n", "M", "q", {
 	noremap = true,
 	silent = true,
 	desc = "Start/stop macro recording",
@@ -365,4 +349,5 @@ vim.keymap.set("n", "<Leader>pl", "L", {
 -- 	silent = true,
 -- 	desc = "save",
 -- })
+--
 --

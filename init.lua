@@ -35,6 +35,8 @@ require("plugins.tools.treesitter")
 require("plugins.tools.yazinvim")
 require("plugins.tools.autotag")
 require("plugins.tools.autopairs")
+require("plugins.tools.image")
+require("plugins.tools.langmapper")
 
 -- ui
 require("plugins.ui.cinnamon")
@@ -61,6 +63,8 @@ require("plugins.ui.bufferline")
 require("plugins.ui.DayOrNight")
 require("plugins.ui.lspsaga")
 require("plugins.ui.lspkind")
+require("plugins.ui.rainbow")
+require("plugins.ui.whichkey")
 -- require("plugins.ui.cursor-anims")
 
 -- snippets
@@ -78,4 +82,3 @@ require("plugins.extras.showfile")
 require("plugins.extras.floutBuffer")
 -- dev
 require("plugins.dev.config")
---------------------------------

@@ -1,3 +1,4 @@
+----------------------------------------------------------------
 --catppuccin
 require("core.lazyplug.colorscheme.catppuccin")
 --
@@ -6,9 +7,6 @@ require("core.lazyplug.colorscheme.catppuccin")
 --
 --tokyonight
 -- require("core.lazyplug.colorscheme.tokyonight")
---
---onedark
--- require("core.lazyplug.colorscheme.onedark")
 --
 --kanagata
 -- require("core.lazyplug.colorscheme.kanagata")
@@ -22,21 +20,6 @@ require("core.lazyplug.colorscheme.catppuccin")
 --dracula
 -- require("core.lazyplug.colorscheme.dracula")
 --
---transparent
--- require("core.lazyplug.colorscheme.transparent")
-
 -- vim.o.background = "light"
----------------------------------------------------------------
---cursor theme
-if vim.o.background == "light" then
-	vim.cmd([[
-  highlight Cursor guifg=#BABABA guibg=#4C4F6A
-  highlight CursorInsert guifg=#BABABA guibg=#4C4F6A
-]])
-elseif vim.o.background == "dark" then
-	vim.cmd([[
-  highlight Cursor guifg=#1E1E2E guibg=#BABABA
-  highlight CursorInsert guifg=#1E1E2E guibg=#BABABA
-]])
-end
 ----------------------------------------------------------------
+-- visual multi settings theme corsor

@@ -3,12 +3,10 @@ return {
 	{ "catppuccin/nvim" },
 	{ "ellisonleao/gruvbox.nvim" },
 	{ "folke/tokyonight.nvim" },
-	{ "navarasu/onedark.nvim" },
 	{ "rebelot/kanagawa.nvim" },
 	{ "mofiqul/vscode.nvim" },
 	{ "sainnhe/everforest" },
 	{ "binhtran432k/dracula.nvim" },
-	{ "xiyaowong/transparent.nvim" },
 	--nocut
 	{ "maarutan/nvim-nocut" },
 	-- treesitter
@@ -142,4 +140,10 @@ return {
 	{ "windwp/nvim-ts-autotag" },
 	--cmp view lsp
 	{ "onsails/lspkind.nvim" },
+	--preview img
+	{ "3rd/image.nvim" },
+	--rainbow
+	{ "hiphish/rainbow-delimiters.nvim" },
+	-- keyboard change bro
+	{ "Wansmer/langmapper.nvim" },
 }

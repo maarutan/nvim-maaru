@@ -1,1 +1,3 @@
-require("better_escape").setup()
+require("better_escape").setup({
+	timeout = 200,
+})

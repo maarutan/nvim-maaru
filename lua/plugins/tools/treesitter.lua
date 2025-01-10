@@ -19,8 +19,7 @@ require("nvim-treesitter.configs").setup({
 
 	matchup = {
 		enable = true, -- mandatory, false will disable the whole extension
-		disable = { "" }, -- optional, list of language that will be disabled
-		-- [options]
+		disable = { "" }, -- optional, list of languages to be disabled
 	},
 
 	-- Асинхронная установка парсеров
@@ -57,5 +56,12 @@ require("nvim-treesitter.configs").setup({
 	-- Опциональные настройки для других функций (например, автоотступы или текстовые объекты)
 	indent = {
 		enable = true, -- Включаем автоотступы
+	},
+
+	-- Настройка rainbow
+	rainbow = {
+		enable = true,
+		extended_mode = true,
+		max_file_lines = 1000,
 	},
 })

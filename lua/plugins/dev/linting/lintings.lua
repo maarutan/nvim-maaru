@@ -12,7 +12,7 @@ lint.linters_by_ft = {
 	python = { "ruff" }, -- For Python
 	lua = { "selene" }, -- For Lua
 	sh = { "shellcheck" }, -- For Shell
-	css = { "stylelint" }, -- For CSS/SCSS
+	-- css = { "stylelint" }, -- For CSS/SCSS
 	yaml = { "yamllint" }, -- For YAML
 }
 

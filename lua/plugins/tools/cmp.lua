@@ -5,27 +5,28 @@ local lspkind = require("lspkind")
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body) -- Use LuaSnip for snippets
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 
 	mapping = {
-		-- C-Space: Open or close autocomplete menu
+		-- C-Space: Toggle autocomplete menu
 		["<C-Space>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.close() -- Close the autocomplete menu
 			else
-				cmp.complete() -- Open the autocomplete menu
+				cmp.complete() -- Open the autocomplete menu and select the first item
+				cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 			end
 		end, { "i", "c" }),
 
 		-- C-e: Close autocomplete menu
 		["<C-e>"] = cmp.mapping.close(),
 
-		-- Tab / Shift-Tab: Navigate in the autocomplete menu or move through snippets
+		-- Tab / Shift-Tab: Confirm or navigate snippets
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.confirm({ select = false }) -- Confirm the selected item manually
+				cmp.select_next_item({ behavior = cmp.SelectBehavior.Select }) -- Navigate to the next item
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump() -- Expand snippet or jump forward
 			else
@@ -41,56 +42,63 @@ cmp.setup({
 			end
 		end, { "i", "s" }),
 
-		-- C-j / C-k: Navigate through autocomplete suggestions
-		["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-		["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+		-- C-j / C-k: Navigate autocomplete suggestions
+		["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+		["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 
-		-- Confirm: Enter, C-l, or C-Return
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-		["<C-l>"] = cmp.mapping.confirm({ select = true }),
-		["<C-Return>"] = cmp.mapping.confirm({ select = true }),
+		-- C-d / C-u: Scroll through autocomplete menu in larger steps
+		["<C-d>"] = cmp.mapping(function(fallback)
+			cmp.select_next_item({ behavior = cmp.SelectBehavior.Select, count = 4 })
+		end, { "i", "c" }),
 
-		-- Scroll through documentation
-		["<C-d>"] = cmp.mapping.scroll_docs(4),
-		["<C-u>"] = cmp.mapping.scroll_docs(-4),
+		["<C-u>"] = cmp.mapping(function(fallback)
+			cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select, count = 4 })
+		end, { "i", "c" }),
+
+		-- A-u / A-d: Switch focus to documentation popup and scroll
+		["<A-u>"] = cmp.mapping.scroll_docs(-4),
+		["<A-d>"] = cmp.mapping.scroll_docs(4),
+
+		-- Confirm selection with Enter, C-l, or C-Return
+		["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }), -- Confirm only on manual confirmation
+		["<C-l>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
+		["<C-Return>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
 	},
 
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" }, -- Source: LSP server
-		{ name = "luasnip" }, -- Source: Snippets
-		{ name = "buffer" }, -- Source: Current buffer text
-		{ name = "path" }, -- Source: File paths
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "buffer" },
+		{ name = "path" },
 	}),
 
 	window = {
-		-- UI settings for the autocomplete menu
 		completion = {
-			border = "rounded", -- Rounded borders
+			border = "rounded",
 			winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-			col_offset = 4, -- Offset to prevent overlapping with the cursor
+			col_offset = 4,
 		},
-		-- UI settings for the documentation popup
 		documentation = {
-			border = "rounded", -- Rounded borders
+			border = "rounded",
 			winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 		},
 	},
 
 	formatting = {
 		format = lspkind.cmp_format({
-			mode = "symbol_text", -- Show both symbol and text
-			maxwidth = 50, -- Max width of text in the menu
-			ellipsis_char = "...", -- Add ellipsis if text is too long
+			mode = "symbol_text",
+			maxwidth = 50,
+			ellipsis_char = "...",
 			menu = {
-				buffer = "[Buffer]",
 				nvim_lsp = "[LSP]",
 				luasnip = "[Snippet]",
+				buffer = "[Buffer]",
 				path = "[Path]",
 			},
 		}),
 	},
 
 	experimental = {
-		ghost_text = false, -- Disable ghost text under the cursor
+		ghost_text = false,
 	},
 })

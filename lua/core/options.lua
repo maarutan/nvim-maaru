@@ -1,6 +1,7 @@
 -- quik nvim
 vim.loader.enable()
 vim.opt.list = true -- Включить отображение listchars
+vim.opt.mouse = ""
 vim.opt.listchars = {
 	-- space = "·", -- Символ для пробела
 	tab = "│ ", -- Символ для табуляции (настроить при необходимости)
