@@ -146,4 +146,6 @@ return {
 	{ "hiphish/rainbow-delimiters.nvim" },
 	-- keyboard change bro
 	{ "Wansmer/langmapper.nvim" },
+	-- buffResize
+	{ "maarutan/buffResizer.nvim" },
 }

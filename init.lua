@@ -37,6 +37,7 @@ require("plugins.tools.autotag")
 require("plugins.tools.autopairs")
 require("plugins.tools.image")
 require("plugins.tools.langmapper")
+require("plugins.tools.buffResizer")
 
 -- ui
 require("plugins.ui.cinnamon")
@@ -80,5 +81,6 @@ require("plugins.extras.buffer-new")
 require("plugins.extras.whoami")
 require("plugins.extras.showfile")
 require("plugins.extras.floutBuffer")
+
 -- dev
 require("plugins.dev.config")

@@ -58,34 +58,22 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", {
 	desc = "  right focus",
 }) -- Фокус на правое окно
 
---
-vim.api.nvim_set_keymap("n", "<leader>wv", ":vsplit<CR>", {
-	noremap = true,
-	silent = true,
-	desc = "  Vertical Split",
-})
-
-vim.api.nvim_set_keymap("n", "<leader>ws", ":split<CR>", {
-	noremap = true,
-	silent = true,
-	desc = "  horizontal Split",
-})
-vim.api.nvim_set_keymap("n", "<A-s-h>", ":vertical resize -5<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-h>", ":vertical resize -16<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰶢 Left resize",
 }) -- уменьшить ширину окна
-vim.api.nvim_set_keymap("n", "<A-s-l>", ":vertical resize +5<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-l>", ":vertical resize +16<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰔰 Right resize ",
 }) -- увеличить ширину окна
-vim.api.nvim_set_keymap("n", "<A-s-k>", ":resize -5<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-k>", ":resize -16<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰶣 Up resize",
 }) -- уменьшить высоту окна
-vim.api.nvim_set_keymap("n", "<A-s-j>", ":resize +5<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-j>", ":resize +16<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰶡 Down resize",
@@ -165,8 +153,7 @@ vim.keymap.set("n", "<leader>tv", ":ToggleTerm direction=vertical size=40<CR>", 
 	desc = "  term: Vertical",
 })
 
--- Горячая клавиша для закрытия буфера или окна: <C-w>
-vim.api.nvim_set_keymap("n", "<leader>bd", ":Bdelete<CR>", {
+vim.api.nvim_set_keymap("n", "<leader>bd", "<cmd>Bdelete<CR>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰩈  Delete buffer",
