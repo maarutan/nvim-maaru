@@ -1,5 +1,6 @@
 -- quik nvim
 vim.loader.enable()
+vim.opt.autoread = true
 vim.opt.list = true -- Включить отображение listchars
 vim.opt.mouse = ""
 vim.opt.listchars = {
