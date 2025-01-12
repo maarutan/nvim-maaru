@@ -74,6 +74,24 @@ end
 vim.keymap.set("n", "<leader>wd", open_file_browser, { desc = "Open file_browser" })
 
 -- Telescope setup
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
+
+-- Custom function to move selection up by 4 items
+local function custom_move_selection_previous(prompt_bufnr)
+	local picker = action_state.get_current_picker(prompt_bufnr)
+	for _ = 1, 4 do
+		actions.move_selection_previous(prompt_bufnr)
+	end
+end
+
+-- Custom function to move selection down by 4 items
+local function custom_move_selection_next(prompt_bufnr)
+	local picker = action_state.get_current_picker(prompt_bufnr)
+	for _ = 1, 4 do
+		actions.move_selection_next(prompt_bufnr)
+	end
+end
 
 telescope.setup({
 	defaults = {
@@ -94,7 +112,29 @@ telescope.setup({
 			"%.webm",
 			"%.m4v",
 		},
+
+		-- initial_mode = "normal",
+
+		layout_config = {
+			preview_width = 0.5, -- window size (50% from width)
+		},
+		layout_strategy = "horizontal",
+		mappings = {
+			i = {
+				["<C-u>"] = custom_move_selection_previous,
+				["<C-d>"] = custom_move_selection_next,
+				["<A-u>"] = actions.preview_scrolling_up,
+				["<A-d>"] = actions.preview_scrolling_down,
+			},
+			n = {
+				["<C-u>"] = custom_move_selection_previous,
+				["<C-d>"] = custom_move_selection_next,
+				["<A-u>"] = actions.preview_scrolling_up,
+				["<A-d>"] = actions.preview_scrolling_down,
+			},
+		},
 	},
+
 	extensions = {
 		undo = {
 			side_by_side = true,

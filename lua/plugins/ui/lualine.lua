@@ -33,15 +33,15 @@ require("lualine").setup({
 			end,
 			function()
 				local mode_map = {
-					n = " Normal",
-					i = " Insert",
-					v = "󰈈 Visual",
+					n = " NORMAL",
+					i = " INSERT",
+					v = "󰈈 VISUAL",
 					V = "󰈈 V-Line",
 					[""] = "󰈈 V-Block",
-					c = " Command",
-					t = " Terminal",
-					r = "󰑕 Replace",
-					R = "󰑕 Replace",
+					c = " COMMAND",
+					t = " TERMINAL",
+					r = "󰑕 REPLACE",
+					R = "󰑕 REPLACE",
 				}
 				return mode_map[vim.fn.mode()] or "Unknown"
 			end,
@@ -64,21 +64,27 @@ require("lualine").setup({
 			function()
 				return "🌊🌊"
 			end,
+			-- function()
+			-- 	if vim.o.background == "light" then
+			-- 		return "󰖨"
+			-- 	else
+			-- 		return ""
+			-- 	end
+			-- end,
+		},
+		lualine_y = {
+
+			-- "fileformat",
 			function()
 				return " "
 			end,
-			function()
-				if vim.o.background == "light" then
-					return "󰖨"
-				else
-					return ""
-				end
-			end,
-			"fileformat",
 			"filetype",
 		},
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_z = {
+
+			"progress",
+			"location",
+		},
 	},
 	inactive_sections = {
 		lualine_a = {},

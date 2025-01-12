@@ -58,22 +58,23 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", {
 	desc = "  right focus",
 }) -- Фокус на правое окно
 
-vim.api.nvim_set_keymap("n", "<A-s-h>", ":vertical resize -16<cr>", {
+--
+vim.api.nvim_set_keymap("n", "<A-s-h>", ":vertical resize -25<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰶢 Left resize",
 }) -- уменьшить ширину окна
-vim.api.nvim_set_keymap("n", "<A-s-l>", ":vertical resize +16<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-l>", ":vertical resize +25<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰔰 Right resize ",
 }) -- увеличить ширину окна
-vim.api.nvim_set_keymap("n", "<A-s-k>", ":resize -16<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-k>", ":resize -5<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰶣 Up resize",
 }) -- уменьшить высоту окна
-vim.api.nvim_set_keymap("n", "<A-s-j>", ":resize +16<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-j>", ":resize +5<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰶡 Down resize",
@@ -322,6 +323,11 @@ vim.keymap.set("n", "<Leader>pl", "L", {
 	noremap = true,
 	silent = true,
 	desc = "Postion Cursor Bottom",
+})
+
+vim.keymap.set("n", "l", "<Right>", {
+	noremap = true,
+	silent = true,
 })
 
 -- -- save

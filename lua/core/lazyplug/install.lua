@@ -147,5 +147,5 @@ return {
 	-- keyboard change bro
 	{ "Wansmer/langmapper.nvim" },
 	-- buffResize
-	{ "maarutan/buffResizer.nvim" },
+	{ "maarutan/splitResizer.nvim" },
 }
