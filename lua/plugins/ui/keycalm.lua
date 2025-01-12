@@ -17,5 +17,6 @@ require("key-calm").setup({
 		"help",
 		"mason",
 		"lazy",
+		"minimap",
 	},
 })

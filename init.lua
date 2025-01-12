@@ -66,6 +66,7 @@ require("plugins.ui.lspsaga")
 require("plugins.ui.lspkind")
 require("plugins.ui.rainbow")
 require("plugins.ui.whichkey")
+require("plugins.ui.minimap")
 -- require("plugins.ui.cursor-anims")
 
 -- snippets

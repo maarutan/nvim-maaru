@@ -148,4 +148,6 @@ return {
 	{ "Wansmer/langmapper.nvim" },
 	-- buffResize
 	{ "maarutan/splitResizer.nvim" },
+	-- mini map for nvim
+	{ "wfxr/minimap.vim", build = "cargo install --locked code-minimap" },
 }

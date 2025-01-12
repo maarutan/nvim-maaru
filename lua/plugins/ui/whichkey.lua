@@ -13,6 +13,13 @@ wk.add({
 	{ "<leader>gc", desc = "Open Commits" },
 	{ "<leader>gs", desc = "Open Status" },
 
+	{ "<leader>m", group = "Map" },
+	{ "<leader>mm", desc = "Map Toggle" },
+	{ "<leader>mc", desc = "Map Close" },
+	{ "<leader>mr", desc = "Map Refresh" },
+	{ "<leader>ms", desc = "Map Rescan" },
+	{ "<leader>mu", desc = "Map Update Highlight" },
+
 	{ "<leader>e", desc = "Open Neotree" },
 	{ "<leader>t", desc = "Tabs" },
 	{ "<leader>u", desc = "Undo" },

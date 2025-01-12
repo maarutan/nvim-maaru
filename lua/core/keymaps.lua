@@ -221,14 +221,14 @@ vim.keymap.set("n", "<C-a>", "ggVG", {
 	desc = " Select all in normal mode",
 })
 -- Delete backward word
-vim.keymap.set("i", "<C-BS>", "<Esc>vbdi", {
+vim.keymap.set("i", "<C-BS>", "<cmd>vbdi", {
 	noremap = true,
 	silent = true,
 	desc = "󰂄 Delete word backwards",
 })
 
 -- Delete forward word
-vim.keymap.set("i", "<C-Del>", "<Esc>vedi", {
+vim.keymap.set("i", "<C-Del>", "<cmd>vedi", {
 	noremap = true,
 	silent = true,
 	desc = "󰂅 Delete word forwards",
@@ -342,5 +342,4 @@ vim.keymap.set("n", "l", "<Right>", {
 -- 	silent = true,
 -- 	desc = "save",
 -- })
---
 --

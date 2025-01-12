@@ -15,7 +15,7 @@ function _G.set_terminal_keymaps()
 
 	-- Клавиши для выхода из терминала
 	vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
-	vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
+	vim.keymap.set("t", "jj", [[<C-\><C-n>]], opts)
 
 	-- Клавиши для навигации между окнами
 	vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
