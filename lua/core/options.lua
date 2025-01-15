@@ -1,5 +1,6 @@
 -- General settings
 vim.loader.enable()
+vim.opt.fillchars:append({ eob = " " })
 vim.opt.autoread = true
 vim.opt.list = true
 vim.opt.mouse = ""

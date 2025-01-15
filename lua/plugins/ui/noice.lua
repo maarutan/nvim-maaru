@@ -38,6 +38,6 @@ require("noice").setup({
 	},
 })
 
-vim.cmd([[
-highlight NoiceMini guifg=#62667B  
-]])
+-- vim.cmd([[
+--  highlight NoiceMini guifg=#62667B
+-- ]])

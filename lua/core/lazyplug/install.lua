@@ -7,6 +7,7 @@ return {
 	{ "mofiqul/vscode.nvim" },
 	{ "sainnhe/everforest" },
 	{ "binhtran432k/dracula.nvim" },
+	{ "shaunsingh/moonlight.nvim" },
 	--nocut
 	{ "maarutan/nvim-nocut" },
 	-- treesitter
