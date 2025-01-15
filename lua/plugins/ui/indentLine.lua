@@ -7,7 +7,7 @@ require("ibl").setup({
 		enabled = false, -- Отключаем подсветку области для ibl
 	},
 	exclude = {
-		filetypes = { "dashboard" }, -- Исключаем файлы
+		filetypes = { "dashboard", "NvimTree", "neo-tree", "toggleterm", "terminal" }, -- Исключаем файлы
 	},
 })
 
@@ -45,7 +45,7 @@ require("mini.indentscope").setup({
 
 -- Добавляем игнорирование для mini.indentscope
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "dashboard", "help", "neo-tree", "lazy", "terminal" }, -- Список типов файлов для игнорирования
+	pattern = { "dashboard", "help", "neo-tree", "lazy", "terminal", "toggleterm" }, -- Список типов файлов для игнорирования
 	callback = function()
 		vim.b.miniindentscope_disable = true -- Отключение mini.indentscope для текущего буфера
 	end,

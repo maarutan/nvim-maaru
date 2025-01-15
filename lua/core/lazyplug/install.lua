@@ -42,7 +42,7 @@ return {
 	-- comments
 	{ "terrortylor/nvim-comment" },
 	-- code runner
-	{ "crag666/code_runner.nvim" },
+	{ "maarutan/code-runner.nvim" },
 	-- yazi for nvim
 	{ "mikavilpas/yazi.nvim" },
 	--todo:
@@ -132,8 +132,8 @@ return {
 	--nvim linting
 	{ "mfussenegger/nvim-lint" },
 	--quickfix ui for nvim
-	-- { "kevinhwang91/nvim-bqf" }
-	{ "folke/trouble.nvim" },
+	{ "kevinhwang91/nvim-bqf" },
+	-- { "folke/trouble.nvim" },
 	--lspsaga better ui for lsp
 	{ "nvimdev/lspsaga.nvim" },
 	--auto autotag
@@ -150,4 +150,8 @@ return {
 	{ "maarutan/splitResizer.nvim" },
 	-- mini map for nvim
 	{ "wfxr/minimap.vim" },
+	-- eyeliner
+	{ "jinh0/eyeliner.nvim" },
+	-- beacon cursor
+	{ "DanilaMihailov/beacon.nvim" },
 }

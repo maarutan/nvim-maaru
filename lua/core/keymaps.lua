@@ -59,12 +59,12 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", {
 }) -- Фокус на правое окно
 
 --
-vim.api.nvim_set_keymap("n", "<A-s-h>", ":vertical resize -25<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-h>", ":vertical resize -30<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰶢 Left resize",
 }) -- уменьшить ширину окна
-vim.api.nvim_set_keymap("n", "<A-s-l>", ":vertical resize +25<cr>", {
+vim.api.nvim_set_keymap("n", "<A-s-l>", ":vertical resize +30<cr>", {
 	noremap = true,
 	silent = true,
 	desc = " 󰔰 Right resize ",

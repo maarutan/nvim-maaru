@@ -1,5 +1,13 @@
-vim.g.scrollview_vertical = 1
-vim.g.scrollview_horizontal = 0
-vim.g.scrollview_numbars = 0
-vim.g.scrollview_maxheight = 1
-vim.g.scrollview_step = 1
+require("scrollview").setup({
+	excluded_filetypes = {
+		"nerdtree",
+		"neo-tree",
+		"TelescopePrompt",
+		"toggleterm",
+		"dashboard",
+		"NvimTree",
+		"minimap",
+	},
+})
+
+vim.g.scrollview_signs_on_startup = { "other", "features" } -- delete on marks

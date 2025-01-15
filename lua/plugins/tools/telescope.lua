@@ -1,6 +1,11 @@
 --Telescope configuration
 local telescope = require("telescope")
 local builtin = require("telescope.builtin")
+telescope.load_extension("notify")
+telescope.load_extension("file_browser")
+telescope.load_extension("undo")
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
 
 -- Main key bindings
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
@@ -73,10 +78,6 @@ end
 
 vim.keymap.set("n", "<leader>wd", open_file_browser, { desc = "Open file_browser" })
 
--- Telescope setup
-local actions = require("telescope.actions")
-local action_state = require("telescope.actions.state")
-
 -- Custom function to move selection up by 4 items
 local function custom_move_selection_previous(prompt_bufnr)
 	local picker = action_state.get_current_picker(prompt_bufnr)
@@ -93,6 +94,15 @@ local function custom_move_selection_next(prompt_bufnr)
 	end
 end
 
+local function custom_set_prompt_to_selection(prompt_bufnr)
+	local picker = action_state.get_current_picker(prompt_bufnr)
+	local entry = action_state.get_selected_entry()
+	if entry then
+		picker:set_prompt(entry.value)
+	else
+		print("No selection available")
+	end
+end
 telescope.setup({
 	defaults = {
 		file_ignore_patterns = {
@@ -125,12 +135,18 @@ telescope.setup({
 				["<C-d>"] = custom_move_selection_next,
 				["<A-u>"] = actions.preview_scrolling_up,
 				["<A-d>"] = actions.preview_scrolling_down,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+				["<C-l>"] = custom_set_prompt_to_selection,
 			},
 			n = {
 				["<C-u>"] = custom_move_selection_previous,
 				["<C-d>"] = custom_move_selection_next,
 				["<A-u>"] = actions.preview_scrolling_up,
 				["<A-d>"] = actions.preview_scrolling_down,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+				["<C-l>"] = custom_set_prompt_to_selection,
 			},
 		},
 	},
@@ -154,11 +170,6 @@ telescope.setup({
 		},
 	},
 })
-
--- Load Telescope extensions
-telescope.load_extension("notify")
-telescope.load_extension("file_browser")
-telescope.load_extension("undo")
 
 function _G.check_diagnostics(bufnr)
 	local diagnostics = vim.diagnostic.get(bufnr)
@@ -192,33 +203,34 @@ vim.api.nvim_set_keymap(
 	{ desc = "Diagnostics for entire project", noremap = true, silent = true }
 )
 
--- vim.keymap.set("n", "<leader>fr", function()
--- 	local action_state = require("telescope.actions.state")
--- 	local telescope = require("telescope.builtin")
---
--- 	telescope.oldfiles({
--- 		attach_mappings = function(prompt_bufnr, map)
--- 			local function open_and_change_dir()
--- 				local selection = action_state.get_selected_entry()
--- 				if not selection then
--- 					print("[Telescope] No selection")
--- 					return
--- 				end
--- 				local filepath = selection.path or selection.filename
--- 				if filepath then
--- 					local dir = vim.fn.fnamemodify(filepath, ":h")
--- 					vim.cmd("cd " .. dir)
--- 					vim.cmd("e! " .. filepath)
--- 				end
--- 				vim.cmd("Bdelete " .. prompt_bufnr)
--- 			end
---
--- 			map("i", "<CR>", open_and_change_dir)
--- 			map("n", "<CR>", open_and_change_dir)
--- 			return true
--- 		end,
--- 	})
--- end, { noremap = true, silent = true, desc = "Open Recent Files and change directory" })
+vim.keymap.set("n", "<leader>fR", function()
+	local action_state = require("telescope.actions.state")
+	local telescope = require("telescope.builtin")
+
+	telescope.oldfiles({
+		attach_mappings = function(prompt_bufnr, map)
+			local function open_and_change_dir()
+				local selection = action_state.get_selected_entry()
+				if not selection then
+					print("[Telescope] No selection")
+					return
+				end
+				local filepath = selection.path or selection.filename
+				if filepath then
+					local dir = vim.fn.fnamemodify(filepath, ":h")
+					vim.cmd("cd " .. dir)
+					vim.cmd("e! " .. filepath)
+				end
+				vim.cmd("Bdelete " .. prompt_bufnr)
+			end
+
+			map("i", "<CR>", open_and_change_dir)
+			map("n", "<CR>", open_and_change_dir)
+			return true
+		end,
+	})
+end, { noremap = true, silent = true, desc = "Open Recent Files and change directory" })
+
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>fr",

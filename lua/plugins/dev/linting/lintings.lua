@@ -54,8 +54,9 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
 -- Отправка диагностик в Quickfix
-vim.keymap.set("n", "<leader>dQ", function()
+vim.keymap.set("n", "<leader>dq", function()
 	local diagnostics = vim.diagnostic.get()
 	vim.fn.setqflist({}, "r", { title = "Diagnostics", items = vim.diagnostic.toqflist(diagnostics) })
 	vim.cmd("copen")

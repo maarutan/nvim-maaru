@@ -41,14 +41,14 @@ require("bufferline").setup({
 		custom_areas = {
 			right = function()
 				local mode = vim.g.is_day_mode and "   󰖨  ▎" or "     ▎"
-				local fg = vim.g.is_day_mode and "#1e1e2e" or "#ffffff"
+				local fg = vim.g.is_day_mode and "#ffffff" or "#1e1e2e"
 				return {
 					{ text = mode, padding = 1 },
 					{ text = "🌊🌊🌊 " },
 					{
-						text = "  ",
+						text = "  ",
 						fg = fg,
-						bg = "#FF5F5F",
+						bg = "#C75B5F",
 						padding = 1,
 					},
 				}

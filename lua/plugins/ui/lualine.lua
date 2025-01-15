@@ -72,9 +72,8 @@ require("lualine").setup({
 			-- 	end
 			-- end,
 		},
-		lualine_y = {
 
-			-- "fileformat",
+		lualine_y = {
 			function()
 				return " "
 			end,

@@ -7,6 +7,8 @@ wk.add({
 	{ "<leader>fb", desc = "Find Buffer" },
 	{ "<leader>fh", desc = "Find Help" },
 	{ "<leader>fn", desc = "Find Notify" },
+	{ "<leader>fr", desc = "Find Recent" },
+	{ "<leader>fR", desc = "Find Recent and change directory" },
 
 	{ "<leader>g", group = "Git" },
 	{ "<leader>gb", desc = "Open Branches" },

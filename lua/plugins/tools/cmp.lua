@@ -101,4 +101,28 @@ cmp.setup({
 	experimental = {
 		ghost_text = false,
 	},
+	cmp.setup.cmdline({ "/", "?" }, {
+		mapping = {
+			["<C-j>"] = cmp.mapping(function(fallback)
+				if cmp.visible() then
+					cmp.select_next_item()
+				else
+					fallback()
+				end
+			end, { "c" }),
+
+			["<C-k>"] = cmp.mapping(function(fallback)
+				if cmp.visible() then
+					cmp.select_prev_item()
+				else
+					fallback()
+				end
+			end, { "c" }),
+
+			["<CR>"] = cmp.mapping.confirm({ select = true }),
+		},
+		sources = {
+			{ name = "buffer" },
+		},
+	}),
 })

@@ -63,13 +63,13 @@ require("formatter").setup({
 
 ----------------------------
 ------ format on save ------
-----------------------------
 vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost * FormatWrite
+  autocmd BufWritePost * FormatWrite | w!
 augroup END
 ]],
 	true
 )
+----------------------------

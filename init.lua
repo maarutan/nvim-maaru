@@ -7,7 +7,6 @@ require("core.options")
 require("core.lazyplug.config")
 require("core.colorscheme")
 require("core.gui")
-
 -------------
 -- PLUGINS --
 -------------
@@ -37,7 +36,8 @@ require("plugins.tools.autotag")
 require("plugins.tools.autopairs")
 require("plugins.tools.image")
 require("plugins.tools.langmapper")
-require("plugins.tools.buffResizer")
+require("plugins.tools.splitResizer")
+require("plugins.tools.eyeliner")
 
 -- ui
 require("plugins.ui.cinnamon")
@@ -82,6 +82,7 @@ require("plugins.extras.buffer-new")
 require("plugins.extras.whoami")
 require("plugins.extras.showfile")
 require("plugins.extras.floutBuffer")
+require("plugins.extras.tabs")
 
 -- dev
 require("plugins.dev.config")
