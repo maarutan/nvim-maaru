@@ -61,9 +61,6 @@ require("lualine").setup({
 			-- end,
 		},
 		lualine_x = {
-			function()
-				return "🌊🌊"
-			end,
 			-- function()
 			-- 	if vim.o.background == "light" then
 			-- 		return "󰖨"
@@ -71,9 +68,24 @@ require("lualine").setup({
 			-- 		return ""
 			-- 	end
 			-- end,
+			function()
+				return "🌊🌊"
+			end,
+
+			{
+				function()
+					local command = require("noice").api.status.command.get()
+					if command and command ~= "" then
+						return command
+					else
+						return "🚀"
+					end
+				end,
+			},
 		},
 
 		lualine_y = {
+
 			function()
 				return " "
 			end,
