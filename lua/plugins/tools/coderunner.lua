@@ -1,5 +1,5 @@
 require("code-runner").setup({
-	-- keymap = "<A-S-r>",
+	keymap = "<A-S-r>",
 	interrupt_keymap = "<F2>",
 	terminal_mode = "float", -- Default terminal mode
 	commands = {

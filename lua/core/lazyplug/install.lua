@@ -43,7 +43,7 @@ return {
 	-- comments
 	{ "terrortylor/nvim-comment" },
 	-- code runner
-	{ "maarutan/code-runner.nvim" },
+	{ "maarutan/betterRun.nvim" },
 	-- yazi for nvim
 	{ "mikavilpas/yazi.nvim" },
 	--todo:
@@ -155,4 +155,8 @@ return {
 	{ "jinh0/eyeliner.nvim" },
 	-- beacon cursor
 	{ "DanilaMihailov/beacon.nvim" },
+	--gitgraph
+	{ "maarutan/gitgraph.nvim" },
+	-- diffview
+	{ "sindrets/diffview.nvim" },
 }

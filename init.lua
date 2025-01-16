@@ -38,6 +38,8 @@ require("plugins.tools.image")
 require("plugins.tools.langmapper")
 require("plugins.tools.splitResizer")
 require("plugins.tools.eyeliner")
+require("plugins.tools.gitgraph")
+require("plugins.tools.ddifview")
 
 -- ui
 require("plugins.ui.cinnamon")
@@ -75,7 +77,6 @@ require("plugins.snippets.pyright")
 require("plugins.snippets.config")
 
 -- extras
-require("plugins.extras.buffer-clouse")
 require("plugins.extras.buffer-del")
 require("plugins.extras.buffer-name")
 require("plugins.extras.buffer-new")
