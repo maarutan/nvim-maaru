@@ -153,3 +153,9 @@ cmp.setup.cmdline(":", {
 		{ name = "cmdline" },
 	}),
 })
+
+--commands
+vim.cmd([[
+    cnoremap <C-j> <C-n>
+    cnoremap <C-k> <C-p>
+]])

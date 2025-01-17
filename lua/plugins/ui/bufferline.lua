@@ -44,12 +44,11 @@ require("bufferline").setup({
 				local fg = vim.g.is_day_mode and "#ffffff" or "#1e1e2e"
 				return {
 					{ text = mode, padding = 1 },
-					{ text = "🌊🌊🌊 " },
+					{ text = "🌊🌊🌊 ", fg = fg, bg = bg },
 					{
 						text = "  ",
 						fg = fg,
 						bg = "#C75B5F",
-						padding = 1,
 					},
 				}
 			end,
