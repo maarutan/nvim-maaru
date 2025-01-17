@@ -67,6 +67,7 @@ cmp.setup({
 
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
+		{ name = "vim-dadbod-completion" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
@@ -122,7 +123,33 @@ cmp.setup({
 			["<CR>"] = cmp.mapping.confirm({ select = true }),
 		},
 		sources = {
+			{ name = "path" },
 			{ name = "buffer" },
 		},
+	}),
+})
+cmp.setup.cmdline(":", {
+	mapping = vim.tbl_extend("force", cmp.mapping.preset.cmdline(), {
+		["<C-j>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			else
+				fallback()
+			end
+		end, { "c" }),
+
+		["<C-k>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			else
+				fallback()
+			end
+		end, { "c" }),
+
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+	}),
+	sources = cmp.config.sources({
+		{ name = "path" },
+		{ name = "cmdline" },
 	}),
 })

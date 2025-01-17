@@ -77,6 +77,7 @@ return {
 	{ "glepnir/dashboard-nvim" },
 	-- mason
 	{ "williamboman/mason.nvim" },
+	{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 	--formatter
 	{ "mhartington/formatter.nvim" },
 	-- snippets

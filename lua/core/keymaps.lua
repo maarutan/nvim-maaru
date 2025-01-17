@@ -297,12 +297,6 @@ end, {
 	desc = " Open init.lua for editing",
 })
 
---commands
-vim.cmd([[
-    cnoremap <C-j> <C-n>
-    cnoremap <C-k> <C-p>
-]])
-
 vim.keymap.set("n", "M", "q", {
 	noremap = true,
 	silent = true,
@@ -323,11 +317,6 @@ vim.keymap.set("n", "<Leader>pl", "L", {
 	noremap = true,
 	silent = true,
 	desc = "Postion Cursor Bottom",
-})
-
-vim.keymap.set("n", "l", "<Right>", {
-	noremap = true,
-	silent = true,
 })
 
 -- -- save
