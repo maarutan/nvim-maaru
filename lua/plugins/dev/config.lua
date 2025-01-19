@@ -26,6 +26,3 @@ require("plugins.dev.emmets.emmets")
 
 -- mapping
 require("plugins.dev.devmap")
-
---database
-require("plugins.dev.database.dadbod")

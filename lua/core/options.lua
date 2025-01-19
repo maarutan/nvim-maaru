@@ -1,5 +1,6 @@
 -- General settings
 vim.loader.enable()
+vim.opt.inccommand = "split"
 vim.opt.fillchars:append({ eob = " " })
 vim.opt.autoread = true
 vim.opt.list = true

@@ -1,5 +1,9 @@
 local wk = require("which-key")
 
+wk.setup({
+	preset = "modern", --  "classic" | "modern" | "helix"
+})
+
 wk.add({
 	{ "<leader>f", group = "Find" },
 	{ "<leader>ff", desc = "Find File" },

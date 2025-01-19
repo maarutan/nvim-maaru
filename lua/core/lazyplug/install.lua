@@ -22,7 +22,8 @@ return {
 	{ "nvim-tree/nvim-web-devicons" },
 	-- neo tree
 	{ "nvim-neo-tree/neo-tree.nvim", branch = "v2.x" },
-	{ "muniftanjim/nui.nvim" },
+	-- nvim ui
+	{ "MunifTanjim/nui.nvim" },
 	-- highlight colors
 	{ "brenoprata10/nvim-highlight-colors" },
 	-- multi cursor
@@ -91,8 +92,14 @@ return {
 	-- bdelete
 	{ "famiu/bufdelete.nvim" },
 	-- database
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		init = function()
+			vim.g.db_ui_win_position = "right"
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	},
 	{ "tpope/vim-dadbod" },
-	{ "kristijanhusak/vim-dadbod-ui" },
 	{ "kristijanhusak/vim-dadbod-completion" },
 	-- matchup
 	{ "andymass/vim-matchup" },
@@ -145,8 +152,6 @@ return {
 	{ "3rd/image.nvim" },
 	--rainbow
 	{ "hiphish/rainbow-delimiters.nvim" },
-	-- keyboard change bro
-	{ "Wansmer/langmapper.nvim" },
 	-- buffResize
 	{ "maarutan/splitResizer.nvim" },
 	-- mini map for nvim

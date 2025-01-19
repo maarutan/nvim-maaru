@@ -1,6 +1,7 @@
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"c",
+		"cpp",
 		"lua",
 		"vim",
 		"vimdoc",
@@ -21,6 +22,7 @@ require("nvim-treesitter.configs").setup({
 		"rust",
 		"go",
 	},
+	build = ":TSUpdate",
 
 	matchup = {
 		enable = true, -- mandatory, false will disable the whole extension
