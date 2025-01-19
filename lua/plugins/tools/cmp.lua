@@ -90,12 +90,12 @@ cmp.setup({
 			mode = "symbol_text",
 			maxwidth = 50,
 			ellipsis_char = "...",
-			menu = {
-				nvim_lsp = "[LSP]",
-				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				path = "[Path]",
-			},
+			-- menu = {
+			-- nvim_lsp = "[LSP]",
+			-- luasnip = "[Snippet]",
+			-- buffer = "[Buffer]",
+			-- path = "[Path]",
+			-- },
 		}),
 	},
 

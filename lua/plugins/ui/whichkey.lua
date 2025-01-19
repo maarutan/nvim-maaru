@@ -18,6 +18,7 @@ wk.add({
 	{ "<leader>gb", desc = "Open Branches" },
 	{ "<leader>gc", desc = "Open Commits" },
 	{ "<leader>gs", desc = "Open Status" },
+	{ "<leader>gd", desc = "Open Diff View" },
 
 	{ "<leader>m", group = "Map" },
 	{ "<leader>mm", desc = "Map Toggle" },

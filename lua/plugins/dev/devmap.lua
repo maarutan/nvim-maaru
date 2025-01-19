@@ -16,6 +16,8 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<leader>l[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	buf_set_keymap("n", "<leader>l]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	buf_set_keymap("n", "<leader>lR", "<cmd>LspRestart<CR>", opts)
+	buf_set_keymap("n", "<leader>lS", "<cmd>LspStop<CR>", opts)
+	buf_set_keymap("n", "<leader>ls", "<cmd>LspStart<CR>", opts)
 end
 
 -- Setup language servers

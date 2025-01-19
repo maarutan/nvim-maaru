@@ -164,4 +164,6 @@ return {
 	{ "maarutan/gitgraph.nvim" },
 	-- diffview
 	{ "sindrets/diffview.nvim" },
+	-- cellular automaton
+	{ "Eandrju/cellular-automaton.nvim" },
 }

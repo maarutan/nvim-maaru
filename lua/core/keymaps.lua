@@ -85,3 +85,19 @@ vim.keymap.set("n", "M", "q", opts)
 vim.keymap.set("n", "<Leader>ph", "H", opts)
 vim.keymap.set("n", "<Leader>pm", "M", opts)
 vim.keymap.set("n", "<Leader>pl", "L", opts)
+
+-- keymap for cmd
+vim.api.nvim_set_keymap("c", "<A-h>", "<Left>", { noremap = true })
+vim.api.nvim_set_keymap("c", "<A-j>", "<Down>", { noremap = true })
+vim.api.nvim_set_keymap("c", "<A-k>", "<Up>", { noremap = true })
+vim.api.nvim_set_keymap("c", "<A-l>", "<Right>", { noremap = true })
+-- --- for command line
+vim.api.nvim_set_keymap("c", "<A-0>", "<C-b>", { noremap = true })
+vim.api.nvim_set_keymap("c", "<A-4>", "<C-e>", { noremap = true })
+-- --- for command line
+vim.api.nvim_set_keymap("c", "<A-w>", "<C-Right>", { noremap = true })
+vim.api.nvim_set_keymap("c", "<A-e>", "<C-Right>", { noremap = true })
+vim.api.nvim_set_keymap("c", "<A-b>", "<C-Left>", { noremap = true })
+-- --- for command line
+vim.api.nvim_set_keymap("c", "<A-d>", "<C-d>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("c", "<A-dd>", "<C-u>", { noremap = true, silent = true })
