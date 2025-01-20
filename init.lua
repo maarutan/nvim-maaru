@@ -5,6 +5,7 @@
 require("core.keymaps")
 require("core.options")
 require("core.lazyplug.config")
+
 require("core.colorscheme")
 require("core.gui")
 -------------
