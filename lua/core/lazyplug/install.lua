@@ -92,15 +92,7 @@ return {
 	-- bdelete
 	{ "famiu/bufdelete.nvim" },
 	-- database
-	{
-		"kristijanhusak/vim-dadbod-ui",
-		init = function()
-			-- vim.g.db_ui_win_position = "right"
-			vim.g.db_ui_use_nerd_fonts = 1
-		end,
-	},
-	{ "tpope/vim-dadbod" },
-	{ "kristijanhusak/vim-dadbod-completion" },
+	{ require("plugins.dev.database.dadbod") },
 	-- matchup
 	{ "andymass/vim-matchup" },
 	-- illuminate

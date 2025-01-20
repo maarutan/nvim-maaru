@@ -43,6 +43,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
+vim.opt.foldenable = false
 
 -- Windows and splits
 vim.opt.splitright = true
