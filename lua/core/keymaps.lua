@@ -98,6 +98,3 @@ vim.api.nvim_set_keymap("c", "<A-4>", "<C-e>", { noremap = true })
 vim.api.nvim_set_keymap("c", "<A-w>", "<C-Right>", { noremap = true })
 vim.api.nvim_set_keymap("c", "<A-e>", "<C-Right>", { noremap = true })
 vim.api.nvim_set_keymap("c", "<A-b>", "<C-Left>", { noremap = true })
--- --- for command line
-vim.api.nvim_set_keymap("c", "<A-d>", "<C-d>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("c", "<A-dd>", "<C-u>", { noremap = true, silent = true })

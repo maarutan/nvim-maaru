@@ -1,10 +1,13 @@
 require("bufferline").setup({
 	options = {
 		numbers = "none",
-		close_command = "bdelete",
-		right_mouse_command = "bdelete!",
+		close_command = "Bdelete",
+		right_mouse_command = "Bdelete!",
 		left_mouse_command = "buffer",
 		middle_mouse_command = nil,
+		pinned = {
+			enabled = true,
+		},
 		indicator = {
 			icon = "▎",
 			style = "icon",
@@ -55,3 +58,10 @@ require("bufferline").setup({
 		},
 	},
 })
+
+vim.keymap.set(
+	"n",
+	"<leader>bp",
+	"<cmd>BufferLineTogglePin<CR>",
+	{ noremap = true, silent = true, desc = "Pick Buffer" }
+)
