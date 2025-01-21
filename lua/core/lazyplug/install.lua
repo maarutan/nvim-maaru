@@ -146,8 +146,6 @@ return {
 	{ "hiphish/rainbow-delimiters.nvim" },
 	-- buffResize
 	{ "maarutan/splitResizer.nvim" },
-	-- mini map for nvim
-	{ "wfxr/minimap.vim" },
 	-- eyeliner
 	{ "jinh0/eyeliner.nvim" },
 	-- beacon cursor
