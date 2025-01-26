@@ -1,9 +1,9 @@
 # nvim-maaru
 
-![](./.img/moon.png)
-![](./.img/django.png)
-![](./.img/react.png)
-![](./.img/cmp.png)
+![](./.preview/moon.png)
+![](./.preview/django.png)
+![](./.preview/react.png)
+![](./.preview/cmp.png)
 
 # install
 
