@@ -39,6 +39,7 @@ require("plugins.tools.splitResizer")
 require("plugins.tools.eyeliner")
 require("plugins.tools.gitgraph")
 require("plugins.tools.ddifview")
+require("plugins.tools.posssession")
 
 -- ui
 require("plugins.ui.cinnamon")
@@ -68,7 +69,6 @@ require("plugins.ui.lspsaga")
 require("plugins.ui.lspkind")
 require("plugins.ui.rainbow")
 require("plugins.ui.whichkey")
-require("plugins.ui.beacon")
 -- require("plugins.ui.cursor-anims")
 require("plugins.ui.space")
 

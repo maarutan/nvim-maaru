@@ -101,8 +101,6 @@ return {
 	{ "filipdutescu/renamer.nvim" },
 	--filename
 	{ "tpope/vim-eunuch" },
-	--swhicher color theme
-	{ "gagbo/circadian.nvim" },
 	--pacman animshttps
 	{ "maarutan/pacman-anims-nvim" },
 	--keycalm
@@ -122,7 +120,7 @@ return {
 	--lorem for nvim
 	{ "maarutan/lorem.nvim" },
 	--lifeshare
-	{ "azratul/live-share.nvim", dependencies = "jbyuki/instant.nvim" },
+	{ "azratul/live-share.nvim", dependencies = "jbyuki/instant.nvim" }, -- ignore
 	--smoothcursor
 	{ "sphamba/smear-cursor.nvim" },
 	--macro notify
@@ -148,12 +146,12 @@ return {
 	{ "maarutan/splitResizer.nvim" },
 	-- eyeliner
 	{ "jinh0/eyeliner.nvim" },
-	-- beacon cursor
-	{ "DanilaMihailov/beacon.nvim" },
 	--gitgraph
 	{ "maarutan/gitgraph.nvim" },
 	-- diffview
 	{ "sindrets/diffview.nvim" },
 	-- cellular automaton
 	{ "Eandrju/cellular-automaton.nvim" },
+	-- sessions nvim
+	{ "jedrzejboczar/possession.nvim" },
 }
