@@ -5,6 +5,7 @@ local stylua = require("plugins.dev.formatting.stylua")
 local beautysh = require("plugins.dev.formatting.beautysh")
 local black = require("plugins.dev.formatting.black")
 local djlint = require("plugins.dev.formatting.djlint")
+local clang_format = require("plugins.dev.formatting.clang_format")
 
 require("formatter").setup({
 	filetype = {
@@ -53,12 +54,19 @@ require("formatter").setup({
 		sh = { beautysh.format },
 		bash = { beautysh.format },
 		zsh = { beautysh.format },
+
+		------------
+		-- djinja --
+		------------
+		html = { djlint.format },
+		django = { djlint.format },
+
+		------------
+		-- c, c++ --
+		------------
+		c = { clang_format.format },
+		cpp = { clang_format.format },
 	},
-	------------
-	-- djinja --
-	------------
-	html = { djlint.format },
-	django = { djlint.format },
 })
 
 ----------------------------
